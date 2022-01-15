@@ -43,10 +43,11 @@ namespace Cadmus.Itinera.Parts.Test.Epistolography
             ChronotopicsPart part = GetPart(2);
 
             string json = TestHelper.SerializePart(part);
-            ChronotopicsPart part2 =
+            ChronotopicsPart? part2 =
                 TestHelper.DeserializePart<ChronotopicsPart>(json);
 
-            Assert.Equal(part.Id, part2.Id);
+            Assert.NotNull(part2);
+            Assert.Equal(part.Id, part2!.Id);
             Assert.Equal(part.TypeId, part2.TypeId);
             Assert.Equal(part.ItemId, part2.ItemId);
             Assert.Equal(part.RoleId, part2.RoleId);

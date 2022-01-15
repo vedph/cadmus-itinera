@@ -1,5 +1,22 @@
 # Cadmus Itinera Parts
 
+- [Cadmus Itinera Parts](#cadmus-itinera-parts)
+  - [Models](#models)
+  - [Person Item](#person-item)
+    - [ExternalIdsPart](#externalidspart)
+    - [HistoricalEventsPart](#historicaleventspart)
+    - [NamesPart](#namespart)
+    - [PersonInfoPart](#personinfopart)
+    - [PersonWorksPart](#personworkspart)
+  - [Literary Text Item](#literary-text-item)
+    - [AssertedChronotopesPart](#assertedchronotopespart)
+    - [LiteraryWorkInfoPart](#literaryworkinfopart)
+    - [ReferencedTextsPart](#referencedtextspart)
+    - [RelatedPersonsPart](#relatedpersonspart)
+    - [SerialTextInfoPart](#serialtextinfopart)
+    - [WitnessesPart](#witnessespart)
+  - [Manuscript Item](#manuscript-item)
+
 Components for the Itinera project in Cadmus. This library is derived from <https://github.com/vedph/cadmus_itinera> and will replace it once completed.
 
 All the codicological components have been moved to an [independent library](https://github.com/vedph/cadmus-codicology).
@@ -126,7 +143,3 @@ A list of manuscript witnesses for the work.
 ## Manuscript Item
 
 Manuscripts mostly use [codicologic parts](https://github.com/vedph/cadmus-codicology), while adding a couple of Itinera-specific parts.
-
-## History
-
-- 2021-11-22: upgraded to Cadmus refactored libraries only to allow compilation. Models will be refactored later, but a compiled version is required because of other projects depending on Itinera.

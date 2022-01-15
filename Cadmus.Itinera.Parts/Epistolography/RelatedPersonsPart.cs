@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text;
 using Cadmus.Core;
 using Fusi.Tools.Config;
@@ -16,14 +15,14 @@ namespace Cadmus.Itinera.Parts.Epistolography
         /// <summary>
         /// Gets or sets the entries.
         /// </summary>
-        public List<RelatedPerson> Entries { get; set; }
+        public List<RelatedPerson> Persons { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="RelatedPersonsPart"/> class.
         /// </summary>
         public RelatedPersonsPart()
         {
-            Entries = new List<RelatedPerson>();
+            Persons = new List<RelatedPerson>();
         }
 
         /// <summary>
@@ -33,22 +32,22 @@ namespace Cadmus.Itinera.Parts.Epistolography
         /// can optionally be passed to this method for those parts requiring
         /// to access further data.</param>
         /// <returns>The pins: <c>tot-count</c> and a collection of pins with
-        /// these keys: ....</returns>
+        /// these keys: <c>type</c>, <c>target-id</c>, <c>name</c>.</returns>
         public override IEnumerable<DataPin> GetDataPins(IItem item = null)
         {
-            DataPinBuilder builder = new DataPinBuilder();
+            DataPinBuilder builder = new DataPinBuilder(
+                DataPinHelper.DefaultFilter);
 
-            builder.Set("tot", Entries?.Count ?? 0, false);
+            builder.Set("tot", Persons?.Count ?? 0, false);
 
-            if (Entries?.Count > 0)
+            if (Persons?.Count > 0)
             {
-                foreach (var entry in Entries)
+                foreach (RelatedPerson person in Persons)
                 {
-                    // TODO: add values or increase counts like:
-                    // id unique values if not null:
-                    // builder.AddValue("id", entry.Id);
-                    // type-X-count counts if not null, unfiltered:
-                    // builder.Increase(entry.Type, false, "type-");
+                    builder.AddValue("type", person.Type);
+                    builder.AddValue("target-id", person.TargetId);
+                    builder.AddValue("name", person.Name,
+                        filter: true, filterOptions: true);
                 }
             }
 
@@ -63,11 +62,22 @@ namespace Cadmus.Itinera.Parts.Epistolography
         {
             return new List<DataPinDefinition>(new[]
             {
-            // TODO: add pins definitions...
-            new DataPinDefinition(DataPinValueType.Integer,
-               "tot-count",
-               "The total count of entries.")
-        });
+                new DataPinDefinition(DataPinValueType.Integer,
+                   "tot-count",
+                   "The total count of persons."),
+                new DataPinDefinition(DataPinValueType.String,
+                   "type",
+                   "The list of relation types.",
+                   "M"),
+                new DataPinDefinition(DataPinValueType.String,
+                   "target-id",
+                   "The list of target person IDs.",
+                   "M"),
+                new DataPinDefinition(DataPinValueType.String,
+                   "name",
+                   "The list of persons names.",
+                   "Mf")
+            });
         }
 
         /// <summary>
@@ -82,18 +92,18 @@ namespace Cadmus.Itinera.Parts.Epistolography
 
             sb.Append("[RelatedPersons]");
 
-            if (Entries?.Count > 0)
+            if (Persons?.Count > 0)
             {
                 sb.Append(' ');
                 int n = 0;
-                foreach (var entry in Entries)
+                foreach (var entry in Persons)
                 {
                     if (++n > 3) break;
                     if (n > 1) sb.Append("; ");
                     sb.Append(entry);
                 }
-                if (Entries.Count > 3)
-                    sb.Append("...(").Append(Entries.Count).Append(')');
+                if (Persons.Count > 3)
+                    sb.Append("...(").Append(Persons.Count).Append(')');
             }
 
             return sb.ToString();
