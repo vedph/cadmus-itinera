@@ -108,5 +108,15 @@ namespace Cadmus.Seed.Itinera.Parts
 
             return ids;
         }
+
+        public static Assertion GetAssertion()
+        {
+            return new Faker<Assertion>()
+                .RuleFor(a => a.Tag, f => f.PickRandom("a", "b", null))
+                .RuleFor(a => a.Rank, f => f.Random.Short(1, 3))
+                .RuleFor(a => a.References, GetDocReferences(1, 2))
+                .RuleFor(a => a.Note, f => f.Lorem.Sentence().OrNull(f))
+                .Generate();
+        }
     }
 }

@@ -24,7 +24,11 @@ namespace Cadmus.Seed.Itinera.Parts.Epistolography
                     // TODO: use thesaurus
                     .RuleFor(t => t.Type, f => f.PickRandom("alpha", "beta"))
                     .RuleFor(t => t.TargetId, f => f.Lorem.Word() + n)
-                    // TODO
+                    .RuleFor(t => t.TargetCitation,
+                        f => $"{n}." + f.Random.Number(1, 100))
+                    .RuleFor(t => t.SourceCitations,
+                        f => new List<string> { $"{n}." + f.Random.Number(1, 100) })
+                    .RuleFor(t => t.Assertion, SeederHelper.GetAssertion())
                     .Generate());
             }
             return texts;
@@ -46,7 +50,7 @@ namespace Cadmus.Seed.Itinera.Parts.Epistolography
                 throw new ArgumentNullException(nameof(item));
 
             ReferencedTextsPart part = new Faker<ReferencedTextsPart>()
-               .RuleFor(p => p.Texts, f => TODO)
+               .RuleFor(p => p.Texts, f => GetTexts(f.Random.Number(1, 2)))
                .Generate();
             SetPartMetadata(part, roleId, item);
 

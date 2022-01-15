@@ -23,10 +23,7 @@ namespace Cadmus.Seed.Itinera.Parts.Epistolography
                 works.Add(new Faker<PersonWork>()
                     .RuleFor(w => w.Eid, f => f.Random.Word() + n)
                     .RuleFor(w => w.Title, f => f.Lorem.Sentence())
-                    .RuleFor(w => w.Assertion, f => new Refs.Bricks.Assertion
-                    {
-                        Rank = f.Random.Short(1, 3)
-                    })
+                    .RuleFor(w => w.Assertion, SeederHelper.GetAssertion())
                     .Generate());
             }
             return works;

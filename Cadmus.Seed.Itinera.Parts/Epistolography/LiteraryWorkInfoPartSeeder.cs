@@ -45,7 +45,8 @@ namespace Cadmus.Seed.Itinera.Parts.Epistolography
                {
                    new AssertedTitle
                    {
-                       Value = f.Lorem.Sentence()
+                       Value = f.Lorem.Sentence(),
+                       Assertion = SeederHelper.GetAssertion()
                    }
                })
                .RuleFor(p => p.IsLost, f => f.Random.Bool())
