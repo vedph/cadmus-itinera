@@ -32,6 +32,8 @@ The names assigned to the person. See [general parts](https://github.com/vedph/c
 
 ### PersonInfoPart
 
+- ID: `it.vedph.itinera.person-info`
+
 Essential information about a person item. This just contains the sex and a short bio summary. All the key events in the person's life (including birth and death) are modeled as events in the corresponding part.
 
 - sex (string) T:person-sex
@@ -52,32 +54,31 @@ The works by a person. This is just a list of work IDs with a conventional title
 
 A literary text. Most of its parts are specific to the Itinera project.
 
-- IdentifiersPart   
-- LiteraryWorkPart\*
+- LiteraryWorkInfoPart\*
 - AssertedChronotopesPart\*
-- SerialTextInfo
+- ExternalIdsPart
+- SerialTextInfoPart
 - ReferencedTextsPart
 - RelatedPersonsPart (2x, one with role=cited, another with role=recipients)
-- BibliographyPart
+- ExtBibliographyPart
 - NotePart
 - WitnessesPart
 
 ### AssertedChronotopesPart
 
-Place(s) and date(s) for the item.
+Place(s) and date(s) for the work.
 
 - chronotopes\* (AssertedChronotope[])
 
-### LiteraryWorkPart
+### LiteraryWorkInfoPart
 
 Information about the literary work represented by the item.
 
-- genres (string[])
 - languages\* (string[]) T:literary-work-languages
+- genres (string[]) T:literary-work-genres
 - metres (string[]) T:literary-work-metres
 - strophes (string[])
 - isLost (boolean)
-- date (AssertedDate)
 - titles\* (AssertedTitle[]):
   - language (string) T:literary-work-languages
   - value (string)
