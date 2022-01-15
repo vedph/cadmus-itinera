@@ -89,7 +89,7 @@ Information about the literary work represented by the item.
 
 Special part about texts referenced by the item's text. This is a list of all the item's text relevant passages which explicitly or implicitly refer to another text. 
 
-- texts (RelatedText[]):
+- texts (ReferencedText[]):
   - type\* (string) T:related-text-types
   - targetId\* (string)
   - targetCitation (string)
