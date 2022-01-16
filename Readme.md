@@ -1,7 +1,7 @@
 # Cadmus Itinera Parts
 
 - [Cadmus Itinera Parts](#cadmus-itinera-parts)
-  - [Models](#models)
+  - [Overview](#overview)
   - [Person Item](#person-item)
     - [ExternalIdsPart](#externalidspart)
     - [HistoricalEventsPart](#historicaleventspart)
@@ -23,7 +23,16 @@ Components for the Itinera project in Cadmus. This library is derived from <http
 
 All the generic codicological components have been moved to an [independent library](https://github.com/vedph/cadmus-codicology).
 
-## Models
+## Overview
+
+Itinera domains are:
+
+- persons, mostly Petrarch's correspondents.
+- literary texts, mostly letters. Note that currently this does not include the text content, but only information about it.
+- manuscripts related to Petrarch's tradition.
+- cross-domain bibliography.
+
+This configures 3 items: persons, literary texts, and manuscripts.
 
 ## Person Item
 
@@ -91,6 +100,8 @@ Place(s) and date(s) for the work.
 
 ### LiteraryWorkInfoPart
 
+- ID: `it.vedph.itinera.literary-work-info`
+
 Information about the literary work represented by the item.
 
 - languages\* (string[]) T:literary-work-languages
@@ -106,6 +117,8 @@ Information about the literary work represented by the item.
 
 ### ReferencedTextsPart
 
+- ID: `it.vedph.itinera.referenced-texts`
+
 Special part about texts referenced by the item's text. This is a list of all the item's text relevant passages which explicitly or implicitly refer to another text. 
 
 - texts (ReferencedText[]):
@@ -116,6 +129,8 @@ Special part about texts referenced by the item's text. This is a list of all th
   - assertion (Assertion)
 
 ### RelatedPersonsPart
+
+- ID: `it.vedph.itinera.related-persons`
 
 Persons related with the item's text.
 
@@ -128,6 +143,8 @@ Persons related with the item's text.
 
 ### SerialTextInfoPart
 
+- ID: `it.vedph.itinera.serial-text-info`
+
 Special information about a text entering a series of some kind, e.g. a letter replying to another letter, a composition replying to another composition, etc.
 
 - subject\* (string)
@@ -135,6 +152,8 @@ Special information about a text entering a series of some kind, e.g. a letter r
 - textDate (string)
 
 ### WitnessesPart
+
+- ID: `it.vedph.itinera.witnesses`
 
 A list of manuscript witnesses for the work.
 
@@ -168,6 +187,8 @@ Manuscripts mostly use [codicologic parts](https://github.com/vedph/cadmus-codic
 
 ### CodLociPart
 
+- ID: `it.vedph.itinera.cod-loci`
+
 This is specific to Itinera and lists some text passages useful for codicological or philological reasons ("loci critici").
 
 - loci (CodLocus[]):
@@ -182,6 +203,8 @@ This is specific to Itinera and lists some text passages useful for codicologica
     - copyright (string)
 
 ### CodPoemRangesPart
+
+- ID: `it.vedph.itinera.cod-poem-ranges`
 
 - ranges (AlnumRange[]):
   - a\* (string)
