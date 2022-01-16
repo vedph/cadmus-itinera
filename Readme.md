@@ -148,17 +148,18 @@ Manuscripts mostly use [codicologic parts](https://github.com/vedph/cadmus-codic
 
 ### CodLociPart
 
-This is specific to Itinera and lists some text passages useful for codicologic studies.
+This is specific to Itinera and lists some text passages useful for codicological or philological reasons ("loci critici").
 
-- citation\* (string) T:cod-loci-citations
-- range\* (CodLocationRange)
-- text\* (string)
-- images (CodImage[]):
-  - id\* (string)
-  - type\* (string)
-  - sourceId (string)
-  - label (string)
-  - copyright (string)
+- loci (CodLocus[]):
+  - citation\* (string)
+  - range\* (CodLocationRange)
+  - text\* (string)
+  - images (CodImage[]):
+    - id\* (string)
+    - type\* (string)
+    - sourceId (string)
+    - label (string)
+    - copyright (string)
 
 ### CodPoemRangesPart
 

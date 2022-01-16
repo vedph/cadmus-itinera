@@ -1,4 +1,5 @@
 ﻿using Bogus;
+using Cadmus.Codicology.Parts;
 using Cadmus.Itinera.Parts;
 using Cadmus.Refs.Bricks;
 using Fusi.Antiquity.Chronology;
@@ -117,6 +118,22 @@ namespace Cadmus.Seed.Itinera.Parts
                 .RuleFor(a => a.References, GetDocReferences(1, 2))
                 .RuleFor(a => a.Note, f => f.Lorem.Sentence().OrNull(f))
                 .Generate();
+        }
+
+        public static List<CodImage> GetCodImages(int count)
+        {
+            List<CodImage> images = new List<CodImage>();
+            for (int n = 1; n <= count; n++)
+            {
+                images.Add(new Faker<CodImage>()
+                    .RuleFor(i => i.Id, f => f.Lorem.Word() + n)
+                    .RuleFor(i => i.Type, f => f.PickRandom("photo", "drawing"))
+                    .RuleFor(i => i.SourceId, f => f.Lorem.Word())
+                    .RuleFor(i => i.Label, f => f.Lorem.Sentence())
+                    .RuleFor(i => i.Copyright, f => f.Person.FullName)
+                    .Generate());
+            }
+            return images;
         }
     }
 }
