@@ -87,7 +87,8 @@ A literary text. Most of its parts are specific to the Itinera project.
 - ExternalIdsPart
 - SerialTextInfoPart
 - ReferencedTextsPart
-- RelatedPersonsPart (2x, one with role=cited, another with role=recipients)
+- RelatedPersonsPart (role=`cited`)
+- RelatedPersonsPart (role=`recipients`)
 - ExtBibliographyPart
 - NotePart
 - WitnessesPart
@@ -119,7 +120,7 @@ Information about the literary work represented by the item.
 
 - ID: `it.vedph.itinera.referenced-texts`
 
-Special part about texts referenced by the item's text. This is a list of all the item's text relevant passages which explicitly or implicitly refer to another text. 
+Special part about texts referenced by the item's text. This is a list of all the item's text relevant passages which explicitly or implicitly refer to another text.
 
 - texts (ReferencedText[]):
   - type\* (string) T:related-text-types
