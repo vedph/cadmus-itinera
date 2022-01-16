@@ -67,6 +67,7 @@ namespace Cadmus.Itinera.Parts.Codicology
         /// <returns>List of alphanumerics.</returns>
         public static IList<string> InterpolateAlnums(string start, string end)
         {
+            if (start == end) return new List<string> { start };
             var a = ParseAlnum(start);
             var b = ParseAlnum(end);
             if (a == null || b == null) return Array.Empty<string>();
@@ -88,6 +89,7 @@ namespace Cadmus.Itinera.Parts.Codicology
         /// <returns>List of alphanumerics.</returns>
         public static int CountInterpolatedAlnums(string start, string end)
         {
+            if (start == end) return 1;
             var a = ParseAlnum(start);
             var b = ParseAlnum(end);
             if (a == null || b == null) return 0;

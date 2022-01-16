@@ -54,15 +54,16 @@ namespace Cadmus.Itinera.Parts.Codicology
                 Dictionary<string, int> counts = new Dictionary<string, int>();
                 for (int i = 0; i < Layouts.Count; i++)
                 {
-                    counts[Layouts[i].Layout] +=
-                        Layouts[i].Range.B != null
+                    string key = Layouts[i].Layout;
+                    if (!counts.ContainsKey(key)) counts[key] = 0;
+                    counts[key] += Layouts[i].Range.B != null
                         ? AlnumRange.CountInterpolatedAlnums(
                             Layouts[i].Range.A, Layouts[i].Range.B)
                         : 1;
                 }
 
                 foreach (string layout in counts.Keys)
-                    builder.AddValue("layout-" + layout, counts[layout]);
+                    builder.Set("layout-" + layout, counts[layout], false);
             }
 
             return builder.Build(this);
@@ -80,8 +81,8 @@ namespace Cadmus.Itinera.Parts.Codicology
                    "sort-type",
                    "The sort type."),
                 new DataPinDefinition(DataPinValueType.Integer,
-                   "layout-<L>",
-                   "The counts for each layout type.",
+                   "layout-<TYPE>-count",
+                   "The total counts for each layout type.",
                    "M")
             });
         }
