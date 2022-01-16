@@ -21,7 +21,7 @@
 
 Components for the Itinera project in Cadmus. This library is derived from <https://github.com/vedph/cadmus_itinera> and will replace it once completed.
 
-All the codicological components have been moved to an [independent library](https://github.com/vedph/cadmus-codicology).
+All the generic codicological components have been moved to an [independent library](https://github.com/vedph/cadmus-codicology).
 
 ## Models
 
@@ -144,7 +144,27 @@ A list of manuscript witnesses for the work.
 
 ## Manuscript Item
 
-Manuscripts mostly use [codicologic parts](https://github.com/vedph/cadmus-codicology), while adding a couple of Itinera-specific parts.
+Manuscripts mostly use [codicologic parts](https://github.com/vedph/cadmus-codicology), while adding a couple of Itinera-specific parts. Also, they include a number of generic parts.
+
+- [CodShelfmarksPart](https://github.com/vedph/cadmus-codicology#codshelfmarkspart)\*
+- [CodBindingsPart](https://github.com/vedph/cadmus-codicology#codbindingspart)
+- [CodQuiresPart](https://github.com/vedph/cadmus-codicology#codquirespart)
+- [CodQuireLabelsPart](https://github.com/vedph/cadmus-codicology#codquirelabelspart)
+- [CodNumberingsPart](https://github.com/vedph/cadmus-codicology#codnumberingspart)
+- [CodMaterialDscPart](https://github.com/vedph/cadmus-codicology#codmaterialdscpart)
+- [CodContentsPart](https://github.com/vedph/cadmus-codicology#codcontentspart)
+- [CodLayoutsPart](https://github.com/vedph/cadmus-codicology#codlayoutspart)
+- [CodDecorationsPart](https://github.com/vedph/cadmus-codicology#coddecorationspart)
+- [CodWatermarksPart](https://github.com/vedph/cadmus-codicology#codwatermarkspart)
+- [CodHandsPart](https://github.com/vedph/cadmus-codicology#codhandspart)
+- [CodEditsPart](https://github.com/vedph/cadmus-codicology#codeditspart)
+- [CodLociPart](#codlocipart)
+- [CodPoemRangesPart](#codpoemrangespart)
+- HistoricalEventsPart
+- NotePart (role=`history`): free text about a manuscript's history.
+- ExtBibliographyPart
+- MetadataPart
+- NotePart
 
 ### CodLociPart
 
