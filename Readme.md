@@ -9,7 +9,6 @@
     - [PersonInfoPart](#personinfopart)
     - [PersonWorksPart](#personworkspart)
   - [Literary Text Item](#literary-text-item)
-    - [AssertedChronotopesPart](#assertedchronotopespart)
     - [LiteraryWorkInfoPart](#literaryworkinfopart)
     - [ReferencedTextsPart](#referencedtextspart)
     - [RelatedPersonsPart](#relatedpersonspart)
@@ -92,12 +91,6 @@ A literary text. Most of its parts are specific to the Itinera project.
 - ExtBibliographyPart
 - NotePart
 - WitnessesPart
-
-### AssertedChronotopesPart
-
-Place(s) and date(s) for the work.
-
-- chronotopes\* (AssertedChronotope[])
 
 ### LiteraryWorkInfoPart
 
@@ -211,7 +204,7 @@ This is specific to Itinera and lists some text passages useful for codicologica
   - a\* (string)
   - b (string)
 - sortType\* T:cod-poem-range-sort-types
-- layouts (CodPoemLayout):
+- layouts (CodPoemLayout[]):
   - range (AlnumRange)
   - layout (string) T:cod-poem-range-layouts
 
