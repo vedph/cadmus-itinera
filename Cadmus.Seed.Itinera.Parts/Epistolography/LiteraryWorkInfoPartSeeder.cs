@@ -34,8 +34,7 @@ namespace Cadmus.Seed.Itinera.Parts.Epistolography
                .RuleFor(p => p.Languages,
                     f => new List<string> { f.PickRandom("lat", "grc") })
                // TODO: use thesaurus
-               .RuleFor(p => p.Genres,
-                    f => new List<string> { f.PickRandom("alpha", "beta") })
+               .RuleFor(p => p.Genre, f => f.PickRandom("alpha", "beta"))
                // TODO: use thesaurus
                .RuleFor(p => p.Metres,
                     f => new List<string> { f.PickRandom("metre1", "metre2") })

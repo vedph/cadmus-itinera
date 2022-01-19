@@ -19,9 +19,9 @@ namespace Cadmus.Itinera.Parts.Epistolography
         public List<string> Languages { get; set; }
 
         /// <summary>
-        /// Gets or sets the genre(s) the work belongs to.
+        /// Gets or sets the genre the work belongs to.
         /// </summary>
-        public List<string> Genres { get; set; }
+        public string Genre { get; set; }
 
         /// <summary>
         /// Gets or sets the metre(s) used in the work.
@@ -55,7 +55,6 @@ namespace Cadmus.Itinera.Parts.Epistolography
         public LiteraryWorkInfoPart()
         {
             Languages = new List<string>();
-            Genres = new List<string>();
             Metres = new List<string>();
             Strophes = new List<string>();
             Titles = new List<AssertedTitle>();
@@ -74,7 +73,7 @@ namespace Cadmus.Itinera.Parts.Epistolography
                 new StandardDataPinTextFilter());
 
             builder.AddValues("language", Languages);
-            builder.AddValues("genre", Genres);
+            builder.AddValue("genre", Genre);
             builder.AddValues("metre", Metres);
             builder.AddValues("title", Titles.Select(t => t.Value),
                 filter: true, filterOptions: true);
@@ -96,8 +95,7 @@ namespace Cadmus.Itinera.Parts.Epistolography
                     "M"),
                  new DataPinDefinition(DataPinValueType.String,
                     "genre",
-                    "The list of work's genres.",
-                    "M"),
+                    "The list of work's genre."),
                  new DataPinDefinition(DataPinValueType.String,
                     "metre",
                     "The list of work's metres.",

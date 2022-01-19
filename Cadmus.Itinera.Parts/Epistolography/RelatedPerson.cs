@@ -23,11 +23,6 @@ namespace Cadmus.Itinera.Parts.Epistolography
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets the text passage citation.
-        /// </summary>
-        public string Citation { get; set; }
-
-        /// <summary>
         /// Gets or sets the assertion.
         /// </summary>
         public Assertion Assertion { get; set; }

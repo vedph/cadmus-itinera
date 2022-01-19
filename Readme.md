@@ -5,14 +5,14 @@
   - [Person Item](#person-item)
     - [ExternalIdsPart](#externalidspart)
     - [HistoricalEventsPart](#historicaleventspart)
+    - [LetterInfoPart](#letterinfopart)
+  - [Literary Text Item](#literary-text-item)
+    - [LiteraryWorkInfoPart](#literaryworkinfopart)
     - [NamesPart](#namespart)
     - [PersonInfoPart](#personinfopart)
     - [PersonWorksPart](#personworkspart)
-  - [Literary Text Item](#literary-text-item)
-    - [LiteraryWorkInfoPart](#literaryworkinfopart)
     - [ReferencedTextsPart](#referencedtextspart)
     - [RelatedPersonsPart](#relatedpersonspart)
-    - [SerialTextInfoPart](#serialtextinfopart)
     - [WitnessesPart](#witnessespart)
   - [Manuscript Item](#manuscript-item)
     - [CodLociPart](#codlocipart)
@@ -38,7 +38,7 @@ This configures 3 items: persons, literary texts, and manuscripts.
 Persons belong to the epistolographic area of the project. Most parts here are generic. A person may contain some generic info, any number of names, zero or more identifications, a set of biographic events, a set of works, bibliography, and an optional note.
 
 - PersonInfoPart\*
-- NamesPart\*
+- NamesPart
 - ExternalIdsPart
 - HistoricalEventsPart
 - PersonWorksPart
@@ -52,6 +52,49 @@ Identifiers assigned to the person. See [general parts](https://github.com/vedph
 ### HistoricalEventsPart
 
 Generic events (including birth and death) linked to a person's biography. See [general parts](https://github.com/vedph/cadmus-general).
+
+### LetterInfoPart
+
+- ID: `it.vedph.itinera.letter-info`
+
+Additional information about a letter.
+
+- subject\* (string)
+- header (string)
+- textDate (string)
+
+## Literary Text Item
+
+A literary text. Most of its parts are specific to the Itinera project.
+
+- LiteraryWorkInfoPart\*
+- AssertedChronotopesPart\*
+- MetadataPart
+- ExternalIdsPart
+- SerialTextInfoPart
+- ReferencedTextsPart
+- RelatedPersonsPart (role=`cited`)
+- RelatedPersonsPart (role=`recipients`)
+- ExtBibliographyPart
+- NotePart
+- WitnessesPart
+
+### LiteraryWorkInfoPart
+
+- ID: `it.vedph.itinera.literary-work-info`
+
+Information about the literary work represented by the item.
+
+- languages\* (string[]) T:literary-work-languages
+- genre\* (string) T:literary-work-genres (hierarchical, single choice)
+- metres (string[]) T:literary-work-metres
+- strophes (string[])
+- isLost (boolean)
+- titles\* (AssertedTitle[]):
+  - language (string) T:literary-work-languages
+  - value (string)
+  - assertion (Assertion)
+- note (string)
 
 ### NamesPart
 
@@ -77,38 +120,6 @@ The works by a person. This is just a list of work IDs with a conventional title
   - title\* (string)
   - assertion (Assertion)
 
-## Literary Text Item
-
-A literary text. Most of its parts are specific to the Itinera project.
-
-- LiteraryWorkInfoPart\*
-- AssertedChronotopesPart\*
-- ExternalIdsPart
-- SerialTextInfoPart
-- ReferencedTextsPart
-- RelatedPersonsPart (role=`cited`)
-- RelatedPersonsPart (role=`recipients`)
-- ExtBibliographyPart
-- NotePart
-- WitnessesPart
-
-### LiteraryWorkInfoPart
-
-- ID: `it.vedph.itinera.literary-work-info`
-
-Information about the literary work represented by the item.
-
-- languages\* (string[]) T:literary-work-languages
-- genres (string[]) T:literary-work-genres
-- metres (string[]) T:literary-work-metres
-- strophes (string[])
-- isLost (boolean)
-- titles\* (AssertedTitle[]):
-  - language (string) T:literary-work-languages
-  - value (string)
-  - assertion (Assertion)
-- note (string)
-
 ### ReferencedTextsPart
 
 - ID: `it.vedph.itinera.referenced-texts`
@@ -126,24 +137,13 @@ Special part about texts referenced by the item's text. This is a list of all th
 
 - ID: `it.vedph.itinera.related-persons`
 
-Persons related with the item's text.
+Textual labels referencing a person to be identified.
 
 - persons (RelatedPerson[]):
   - type\* (string) T:related-person-types
-  - targetId\* (string)
   - name\* (string)
-  - citation (string)
+  - targetId\* (string)
   - assertion (Assertion)
-
-### SerialTextInfoPart
-
-- ID: `it.vedph.itinera.serial-text-info`
-
-Special information about a text entering a series of some kind, e.g. a letter replying to another letter, a composition replying to another composition, etc.
-
-- subject\* (string)
-- header (string)
-- textDate (string)
 
 ### WitnessesPart
 
@@ -152,7 +152,7 @@ Special information about a text entering a series of some kind, e.g. a letter r
 A list of manuscript witnesses for the work.
 
 - witnesses (Witness[])
-  - targetId\* (string)
+  - id\* (string)
   - range\* (CodLocationRange)
 
 ## Manuscript Item
@@ -174,9 +174,9 @@ Manuscripts mostly use [codicologic parts](https://github.com/vedph/cadmus-codic
 - [CodLociPart](#codlocipart)
 - [CodPoemRangesPart](#codpoemrangespart)
 - HistoricalEventsPart
+- MetadataPart
 - NotePart (role=`history`): free text about a manuscript's history.
 - ExtBibliographyPart
-- MetadataPart
 - NotePart
 
 ### CodLociPart

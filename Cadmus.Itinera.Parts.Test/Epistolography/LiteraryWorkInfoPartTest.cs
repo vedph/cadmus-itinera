@@ -66,7 +66,7 @@ namespace Cadmus.Itinera.Parts.Test.Epistolography
             LiteraryWorkInfoPart part = GetEmptyPart();
 
             part.Languages.Add("grc");
-            part.Genres.Add("comedy");
+            part.Genre = "comedy";
             part.Metres.Add("3ia");
             part.Titles.Add(new AssertedTitle { Value = "The title" });
 

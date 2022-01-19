@@ -3,34 +3,18 @@ using Cadmus.Core;
 using Cadmus.Itinera.Parts.Epistolography;
 using Fusi.Tools.Config;
 using System;
-using System.Collections.Generic;
 
 namespace Cadmus.Seed.Itinera.Parts.Epistolography
 {
+
     /// <summary>
-    /// Seeder for RelatedPersons part.
-    /// Tag: <c>seed.it.vedph.itinera.related-persons</c>.
+    /// Seeder for <see cref="LetterInfoPart"/>.
+    /// Tag: <c>seed.it.vedph.itinera.letter-info</c>.
     /// </summary>
     /// <seealso cref="PartSeederBase" />
-    [Tag("seed.it.vedph.itinera.related-persons")]
-    public sealed class RelatedPersonsPartSeeder : PartSeederBase
+    [Tag("seed.it.vedph.itinera.letter-info")]
+    public sealed class LetterInfoPartSeeder : PartSeederBase
     {
-        private static List<RelatedPerson> GetPersons(int count)
-        {
-            List<RelatedPerson> persons = new List<RelatedPerson>();
-            for (int n = 1; n <= count; n++)
-            {
-                persons.Add(new Faker<RelatedPerson>()
-                    // TODO use thesaurus
-                    .RuleFor(p => p.Type, f => f.PickRandom("alpha", "beta"))
-                    .RuleFor(p => p.TargetId, f => f.Lorem.Word() + n)
-                    .RuleFor(p => p.Name, f => f.Person.FullName)
-                    .RuleFor(p => p.Assertion, SeederHelper.GetAssertion())
-                    .Generate());
-            }
-            return persons;
-        }
-
         /// <summary>
         /// Creates and seeds a new part.
         /// </summary>
@@ -46,8 +30,10 @@ namespace Cadmus.Seed.Itinera.Parts.Epistolography
             if (item == null)
                 throw new ArgumentNullException(nameof(item));
 
-            RelatedPersonsPart part = new Faker<RelatedPersonsPart>()
-               .RuleFor(p => p.Persons, f => GetPersons(f.Random.Number(1, 3)))
+            LetterInfoPart part = new Faker<LetterInfoPart>()
+               .RuleFor(p => p.Subject, f => f.Lorem.Sentence(3))
+               .RuleFor(p => p.Header, f => f.Lorem.Sentence(3))
+               .RuleFor(p => p.TextDate, f => f.Lorem.Sentence(3))
                .Generate();
             SetPartMetadata(part, roleId, item);
 
