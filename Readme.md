@@ -68,16 +68,16 @@ Additional information about a letter.
 A literary text. Most of its parts are specific to the Itinera project.
 
 - LiteraryWorkInfoPart\*
-- AssertedChronotopesPart\*
+- ChronotopesPart\*
 - MetadataPart
 - ExternalIdsPart
-- SerialTextInfoPart
+- LetterInfoPart
 - ReferencedTextsPart
 - RelatedPersonsPart (role=`cited`)
 - RelatedPersonsPart (role=`recipients`)
+- WitnessesPart
 - ExtBibliographyPart
 - NotePart
-- WitnessesPart
 
 ### LiteraryWorkInfoPart
 
