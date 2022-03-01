@@ -35,12 +35,12 @@ This configures 3 items: persons, literary texts, and manuscripts.
 Persons belong to the epistolographic area of the project. Most parts here are generic. A person may contain some generic info, any number of names, zero or more identifications, a set of biographic events, a set of works, bibliography, and an optional note.
 
 - [PersonInfoPart](#personinfopart)\*
-- NamesPart
+- [NamesPart](https://github.com/vedph/cadmus-general#namespart)
 - [PersonWorksPart](#personworkspart)
 - ExternalIdsPart
-- HistoricalEventsPart
-- ExtBibliographyPart
-- NotePart
+- [HistoricalEventsPart](https://github.com/vedph/cadmus-general#historicaleventspart)
+- [ExtBibliographyPart](https://github.com/vedph/cadmus-general#extbibliographypart)
+- [NotePart](https://github.com/vedph/cadmus-general#notepart)
 
 ### PersonInfoPart
 
@@ -68,15 +68,15 @@ A literary text. Most of its parts are specific to the Itinera project.
 
 - [LiteraryWorkInfoPart](literaryworkinfopart)\*
 - [LetterInfoPart](#letterinfopart)
-- ChronotopesPart\*
-- MetadataPart
+- [ChronotopesPart](https://github.com/vedph/cadmus-general#chronotopespart)\*
+- [MetadataPart](https://github.com/vedph/cadmus-general#metadatapart)
 - ExternalIdsPart
 - [ReferencedTextsPart](#referencedtextspart)
-- RelatedPersonsPart (role=`cited`)
-- RelatedPersonsPart (role=`recipients`)
+- [RelatedPersonsPart](#relatedpersonspart) (role=`cited`)
+- [RelatedPersonsPart](#relatedpersonspart) (role=`recipients`)
 - [WitnessesPart](#witnessespart)
-- ExtBibliographyPart
-- NotePart
+- [ExtBibliographyPart](https://github.com/vedph/cadmus-general#extbibliographypart)
+- [NotePart](https://github.com/vedph/cadmus-general#notepart)
 
 ### LetterInfoPart
 
@@ -156,11 +156,11 @@ Manuscripts mostly use [codicologic parts](https://github.com/vedph/cadmus-codic
 - [CodWatermarksPart](https://github.com/vedph/cadmus-codicology#codwatermarkspart)
 - [CodLociPart](#codlocipart)
 - [CodPoemRangesPart](#codpoemrangespart)
-- HistoricalEventsPart
-- MetadataPart
-- NotePart (role=`history`): free text about a manuscript's history.
-- ExtBibliographyPart
-- NotePart
+- [HistoricalEventsPart](https://github.com/vedph/cadmus-general#historicaleventspart)
+- [MetadataPart](https://github.com/vedph/cadmus-general#metadatapart)
+- [NotePart](https://github.com/vedph/cadmus-general#notepart) (role=`history`): free text about a manuscript's history.
+- [NotePart](https://github.com/vedph/cadmus-general#notepart)
+- [ExtBibliographyPart](https://github.com/vedph/cadmus-general#extbibliographypart)
 
 ### CodLociPart
 
