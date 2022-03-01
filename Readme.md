@@ -33,15 +33,17 @@ Itinera domains are:
 
 This configures 3 items: persons, literary texts, and manuscripts.
 
+<hr>
+
 ## Person Item
 
 Persons belong to the epistolographic area of the project. Most parts here are generic. A person may contain some generic info, any number of names, zero or more identifications, a set of biographic events, a set of works, bibliography, and an optional note.
 
-- PersonInfoPart\*
-- NamesPart
+- [PersonInfoPart](#personinfopart)\*
+- [NamesPart](#namespart)
+- [PersonWorksPart](#perwsonworkspart)
 - ExternalIdsPart
 - HistoricalEventsPart
-- PersonWorksPart
 - ExtBibliographyPart
 - NotePart
 
@@ -63,11 +65,13 @@ Additional information about a letter.
 - header (string)
 - textDate (string)
 
+<hr>
+
 ## Literary Text Item
 
 A literary text. Most of its parts are specific to the Itinera project.
 
-- LiteraryWorkInfoPart\*
+- [LiteraryWorkInfoPart](literaryworkinfopart)\*
 - ChronotopesPart\*
 - MetadataPart
 - ExternalIdsPart
@@ -155,22 +159,22 @@ A list of manuscript witnesses for the work.
   - id\* (string)
   - range\* (CodLocationRange)
 
+<hr>
+
 ## Manuscript Item
 
 Manuscripts mostly use [codicologic parts](https://github.com/vedph/cadmus-codicology), while adding a couple of Itinera-specific parts. Also, they include a number of generic parts.
 
-- [CodShelfmarksPart](https://github.com/vedph/cadmus-codicology#codshelfmarkspart)\*
 - [CodBindingsPart](https://github.com/vedph/cadmus-codicology#codbindingspart)
-- [CodQuiresPart](https://github.com/vedph/cadmus-codicology#codquirespart)
-- [CodQuireLabelsPart](https://github.com/vedph/cadmus-codicology#codquirelabelspart)
-- [CodNumberingsPart](https://github.com/vedph/cadmus-codicology#codnumberingspart)
-- [CodMaterialDscPart](https://github.com/vedph/cadmus-codicology#codmaterialdscpart)
 - [CodContentsPart](https://github.com/vedph/cadmus-codicology#codcontentspart)
-- [CodLayoutsPart](https://github.com/vedph/cadmus-codicology#codlayoutspart)
 - [CodDecorationsPart](https://github.com/vedph/cadmus-codicology#coddecorationspart)
-- [CodWatermarksPart](https://github.com/vedph/cadmus-codicology#codwatermarkspart)
-- [CodHandsPart](https://github.com/vedph/cadmus-codicology#codhandspart)
 - [CodEditsPart](https://github.com/vedph/cadmus-codicology#codeditspart)
+- [CodHandsPart](https://github.com/vedph/cadmus-codicology#codhandspart)
+- [CodLayoutsPart](https://github.com/vedph/cadmus-codicology#codlayoutspart)
+- [CodMaterialDscPart](https://github.com/vedph/cadmus-codicology#codmaterialdscpart)
+- [CodSheetLabelsPart](https://github.com/vedph/cadmus-codicology#codsheetlabelspart)
+- [CodShelfmarksPart](https://github.com/vedph/cadmus-codicology#codshelfmarkspart)
+- [CodWatermarksPart](https://github.com/vedph/cadmus-codicology#codwatermarkspart)
 - [CodLociPart](#codlocipart)
 - [CodPoemRangesPart](#codpoemrangespart)
 - HistoricalEventsPart
