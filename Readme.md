@@ -3,14 +3,11 @@
 - [Cadmus Itinera Parts](#cadmus-itinera-parts)
   - [Overview](#overview)
   - [Person Item](#person-item)
-    - [ExternalIdsPart](#externalidspart)
-    - [HistoricalEventsPart](#historicaleventspart)
-    - [LetterInfoPart](#letterinfopart)
-  - [Literary Text Item](#literary-text-item)
-    - [LiteraryWorkInfoPart](#literaryworkinfopart)
-    - [NamesPart](#namespart)
     - [PersonInfoPart](#personinfopart)
     - [PersonWorksPart](#personworkspart)
+  - [Literary Text Item](#literary-text-item)
+    - [LetterInfoPart](#letterinfopart)
+    - [LiteraryWorkInfoPart](#literaryworkinfopart)
     - [ReferencedTextsPart](#referencedtextspart)
     - [RelatedPersonsPart](#relatedpersonspart)
     - [WitnessesPart](#witnessespart)
@@ -18,7 +15,7 @@
     - [CodLociPart](#codlocipart)
     - [CodPoemRangesPart](#codpoemrangespart)
 
-Components for the Itinera project in Cadmus. This library is derived from <https://github.com/vedph/cadmus_itinera> and will replace it once completed.
+Components for the _Itinera_ project in Cadmus. This library is derived from <https://github.com/vedph/cadmus_itinera> and will replace it once completed.
 
 All the generic codicological components have been moved to an [independent library](https://github.com/vedph/cadmus-codicology).
 
@@ -32,8 +29,6 @@ Itinera domains are:
 - cross-domain bibliography.
 
 This configures 3 items: persons, literary texts, and manuscripts.
-
-<hr>
 
 ## Person Item
 
@@ -66,8 +61,6 @@ The works by a person. This is just a list of work IDs with a conventional title
   - eid (string)
   - title\* (string)
   - assertion (Assertion)
-
-<hr>
 
 ## Literary Text Item
 
@@ -146,8 +139,6 @@ A list of manuscript witnesses for the work.
 - witnesses (Witness[])
   - id\* (string)
   - range\* (CodLocationRange)
-
-<hr>
 
 ## Manuscript Item
 
