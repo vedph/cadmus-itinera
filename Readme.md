@@ -40,69 +40,12 @@ This configures 3 items: persons, literary texts, and manuscripts.
 Persons belong to the epistolographic area of the project. Most parts here are generic. A person may contain some generic info, any number of names, zero or more identifications, a set of biographic events, a set of works, bibliography, and an optional note.
 
 - [PersonInfoPart](#personinfopart)\*
-- [NamesPart](#namespart)
-- [PersonWorksPart](#perwsonworkspart)
+- NamesPart
+- [PersonWorksPart](#personworkspart)
 - ExternalIdsPart
 - HistoricalEventsPart
 - ExtBibliographyPart
 - NotePart
-
-### ExternalIdsPart
-
-Identifiers assigned to the person. See [general parts](https://github.com/vedph/cadmus-general).
-
-### HistoricalEventsPart
-
-Generic events (including birth and death) linked to a person's biography. See [general parts](https://github.com/vedph/cadmus-general).
-
-### LetterInfoPart
-
-- ID: `it.vedph.itinera.letter-info`
-
-Additional information about a letter.
-
-- subject\* (string)
-- header (string)
-- textDate (string)
-
-<hr>
-
-## Literary Text Item
-
-A literary text. Most of its parts are specific to the Itinera project.
-
-- [LiteraryWorkInfoPart](literaryworkinfopart)\*
-- ChronotopesPart\*
-- MetadataPart
-- ExternalIdsPart
-- LetterInfoPart
-- ReferencedTextsPart
-- RelatedPersonsPart (role=`cited`)
-- RelatedPersonsPart (role=`recipients`)
-- WitnessesPart
-- ExtBibliographyPart
-- NotePart
-
-### LiteraryWorkInfoPart
-
-- ID: `it.vedph.itinera.literary-work-info`
-
-Information about the literary work represented by the item.
-
-- languages\* (string[]) T:literary-work-languages
-- genre\* (string) T:literary-work-genres (hierarchical, single choice)
-- metres (string[]) T:literary-work-metres
-- strophes (string[])
-- isLost (boolean)
-- titles\* (AssertedTitle[]):
-  - language (string) T:literary-work-languages
-  - value (string)
-  - assertion (Assertion)
-- note (string)
-
-### NamesPart
-
-The names assigned to the person. See [general parts](https://github.com/vedph/cadmus-general).
 
 ### PersonInfoPart
 
@@ -123,6 +66,51 @@ The works by a person. This is just a list of work IDs with a conventional title
   - eid (string)
   - title\* (string)
   - assertion (Assertion)
+
+<hr>
+
+## Literary Text Item
+
+A literary text. Most of its parts are specific to the Itinera project.
+
+- [LiteraryWorkInfoPart](literaryworkinfopart)\*
+- [LetterInfoPart](#letterinfopart)
+- ChronotopesPart\*
+- MetadataPart
+- ExternalIdsPart
+- [ReferencedTextsPart](#referencedtextspart)
+- RelatedPersonsPart (role=`cited`)
+- RelatedPersonsPart (role=`recipients`)
+- [WitnessesPart](#witnessespart)
+- ExtBibliographyPart
+- NotePart
+
+### LetterInfoPart
+
+- ID: `it.vedph.itinera.letter-info`
+
+Additional information about a letter.
+
+- subject\* (string)
+- header (string)
+- textDate (string)
+
+### LiteraryWorkInfoPart
+
+- ID: `it.vedph.itinera.literary-work-info`
+
+Information about the literary work represented by the item.
+
+- languages\* (string[]) T:literary-work-languages
+- genre\* (string) T:literary-work-genres (hierarchical, single choice)
+- metres (string[]) T:literary-work-metres
+- strophes (string[])
+- isLost (boolean)
+- titles\* (AssertedTitle[]):
+  - language (string) T:literary-work-languages
+  - value (string)
+  - assertion (Assertion)
+- note (string)
 
 ### ReferencedTextsPart
 
