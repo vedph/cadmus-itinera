@@ -174,7 +174,7 @@ This is specific to Itinera and lists some text passages useful for codicologica
   - text\* (string)
   - images (CodImage[]):
     - id\* (string)
-    - type\* (string)
+    - type\* (string) T:cod-image-types
     - sourceId (string)
     - label (string)
     - copyright (string)
