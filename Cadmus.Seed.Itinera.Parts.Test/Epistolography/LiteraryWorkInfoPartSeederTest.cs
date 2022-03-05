@@ -40,7 +40,7 @@ namespace Cadmus.Seed.Itinera.Parts.Test.Epistolography
             Assert.NotNull(p);
 
             TestHelper.AssertPartMetadata(p!);
-            Assert.NotEmpty(p.Titles);
+            Assert.NotEmpty(p!.Titles);
         }
     }
 }

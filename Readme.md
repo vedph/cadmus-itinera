@@ -14,6 +14,7 @@
   - [Manuscript Item](#manuscript-item)
     - [CodLociPart](#codlocipart)
     - [CodPoemRangesPart](#codpoemrangespart)
+  - [History](#history)
 
 Components for the _Itinera_ project in Cadmus. This library is derived from <https://github.com/vedph/cadmus_itinera> and will replace it once completed.
 
@@ -213,4 +214,8 @@ Each of these poems can have one of these layouts:
 - 2 verses per line
 - 3 verses per line
 
-Once the ranges have been selected by picking them from genres and/or entering them, users must specify the layout for each poem in a sort of table, where columns are the 4 layouts, and rows are the poems.
+Once the ranges have been selected by picking them from genres and/or entering them, users must specify the layout for each poem.
+
+## History
+
+- 2022-03-05: upgraded packages.
