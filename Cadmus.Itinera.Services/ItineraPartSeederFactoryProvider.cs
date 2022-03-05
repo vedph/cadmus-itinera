@@ -1,5 +1,6 @@
 ﻿using Cadmus.Core.Config;
 using Cadmus.Seed;
+using Cadmus.Seed.Codicology.Parts;
 using Cadmus.Seed.General.Parts;
 using Cadmus.Seed.Itinera.Parts.Epistolography;
 using Cadmus.Seed.Philology.Parts;
@@ -36,7 +37,9 @@ namespace CadmusApi.Services
                 // Cadmus.Seed.Philology.Parts
                 typeof(ApparatusLayerFragmentSeeder).Assembly,
                 // Cadmus.Seed.Itinera.Parts
-                typeof(PersonInfoPartSeeder).GetTypeInfo().Assembly
+                typeof(PersonInfoPartSeeder).GetTypeInfo().Assembly,
+                // Cadmus.Seed.Codicology.Parts
+                typeof(CodBindingsPartSeeder).GetTypeInfo().Assembly
             };
             TagAttributeToTypeMap map = new TagAttributeToTypeMap();
             map.Add(seedAssemblies);

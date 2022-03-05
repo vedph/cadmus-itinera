@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reflection;
+using Cadmus.Codicology.Parts;
 using Cadmus.Core;
 using Cadmus.Core.Config;
 using Cadmus.Core.Storage;
@@ -39,7 +40,9 @@ namespace Cadmus.Itinera.Services
                 // Cadmus.Philology.Parts
                 typeof(ApparatusLayerFragment).GetTypeInfo().Assembly,
                 // Cadmus.Itinera.Parts
-                typeof(PersonInfoPart).GetTypeInfo().Assembly
+                typeof(PersonInfoPart).GetTypeInfo().Assembly,
+                // Cadmus.Codicology.Parts
+                typeof(CodBindingsPart).GetTypeInfo().Assembly,
             });
 
             _partTypeProvider = new StandardPartTypeProvider(map);
