@@ -1,4 +1,5 @@
 ﻿using Cadmus.Refs.Bricks;
+using System.Collections.Generic;
 
 namespace Cadmus.Itinera.Parts.Epistolography
 {
@@ -13,19 +14,22 @@ namespace Cadmus.Itinera.Parts.Epistolography
         public string Type { get; set; }
 
         /// <summary>
-        /// Gets or sets the target identifier.
-        /// </summary>
-        public string TargetId { get; set; }
-
-        /// <summary>
         /// Gets or sets the person name in this relation.
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets the assertion.
+        /// Gets or sets the identifications for this type.
         /// </summary>
-        public Assertion Assertion { get; set; }
+        public IList<AssertedId> Ids { get; set; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RelatedPerson"/> class.
+        /// </summary>
+        public RelatedPerson()
+        {
+            Ids = new List<AssertedId>();
+        }
 
         /// <summary>
         /// Converts to string.
@@ -35,7 +39,7 @@ namespace Cadmus.Itinera.Parts.Epistolography
         /// </returns>
         public override string ToString()
         {
-            return $"[{Type}] {TargetId}: {Name}";
+            return $"[{Type}]: {Name}";
         }
     }
 }

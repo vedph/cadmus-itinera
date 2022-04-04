@@ -1,5 +1,6 @@
 ﻿using Cadmus.Core;
 using Cadmus.Itinera.Parts.Epistolography;
+using Cadmus.Refs.Bricks;
 using Cadmus.Seed.Itinera.Parts.Epistolography;
 using System;
 using System.Collections.Generic;
@@ -80,7 +81,13 @@ namespace Cadmus.Itinera.Parts.Test.Epistolography
                 part.Persons.Add(new RelatedPerson
                 {
                     Type = n % 2 == 0 ? "even" : "odd",
-                    TargetId = "target" + n,
+                    Ids = new List<AssertedId>
+                    {
+                        new AssertedId
+                        {
+                            Value = "target" + n
+                        }
+                    },
                     Name = "name" + n
                 });
             }

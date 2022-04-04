@@ -1,6 +1,7 @@
 ﻿using Bogus;
 using Cadmus.Core;
 using Cadmus.Itinera.Parts.Epistolography;
+using Cadmus.Refs.Bricks;
 using Fusi.Tools.Config;
 using System;
 using System.Collections.Generic;
@@ -21,11 +22,15 @@ namespace Cadmus.Seed.Itinera.Parts.Epistolography
             for (int n = 1; n <= count; n++)
             {
                 persons.Add(new Faker<RelatedPerson>()
-                    // TODO use thesaurus
                     .RuleFor(p => p.Type, f => f.PickRandom("alpha", "beta"))
-                    .RuleFor(p => p.TargetId, f => f.Lorem.Word() + n)
+                    .RuleFor(p => p.Ids, f => new List<AssertedId>
+                    {
+                        new AssertedId
+                        {
+                            Value = f.Lorem.Word() + n
+                        }
+                    })
                     .RuleFor(p => p.Name, f => f.Person.FullName)
-                    .RuleFor(p => p.Assertion, SeederHelper.GetAssertion())
                     .Generate());
             }
             return persons;

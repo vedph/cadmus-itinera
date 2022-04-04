@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Cadmus.Core;
 using Fusi.Tools.Config;
@@ -45,7 +46,8 @@ namespace Cadmus.Itinera.Parts.Epistolography
                 foreach (RelatedPerson person in Persons)
                 {
                     builder.AddValue("type", person.Type);
-                    builder.AddValue("target-id", person.TargetId);
+                    if (person.Ids?.Count > 0)
+                        builder.AddValues("target-id", person.Ids.Select(i => i.Value));
                     builder.AddValue("name", person.Name,
                         filter: true, filterOptions: true);
                 }

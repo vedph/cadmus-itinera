@@ -19,13 +19,11 @@ namespace Cadmus.Seed.Itinera.Parts.Test
         {
             if (name == null) throw new ArgumentNullException(nameof(name));
 
-            using (StreamReader reader = new StreamReader(
+            using StreamReader reader = new(
                 Assembly.GetExecutingAssembly().GetManifestResourceStream(
-                    $"Cadmus.Seed.Itinera.Parts.Test.Assets.{name}"),
-                Encoding.UTF8))
-            {
-                return reader.ReadToEnd();
-            }
+                    $"Cadmus.Seed.Itinera.Parts.Test.Assets.{name}")!,
+                Encoding.UTF8);
+            return reader.ReadToEnd();
         }
 
         static public PartSeederFactory GetFactory()

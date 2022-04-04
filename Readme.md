@@ -128,8 +128,11 @@ Textual labels referencing a person to be identified.
 - persons (RelatedPerson[]):
   - type\* (string) T:related-person-types
   - name\* (string)
-  - targetId\* (string)
-  - assertion (Assertion)
+  - ids\* (AssertedId[]):
+    - tag (string)
+    - value\* (string)
+    - scope (string)
+    - assertion (Assertion)
 
 ### WitnessesPart
 
