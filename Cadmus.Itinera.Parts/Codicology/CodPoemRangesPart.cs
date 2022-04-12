@@ -27,6 +27,11 @@ namespace Cadmus.Itinera.Parts.Codicology
         public List<CodPoemLayout> Layouts { get; set; }
 
         /// <summary>
+        /// Gets or sets an optional note.
+        /// </summary>
+        public string Note { get; set; }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="CodPoemRangesPart"/>
         /// class.
         /// </summary>

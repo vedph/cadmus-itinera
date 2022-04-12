@@ -194,6 +194,7 @@ This is specific to Itinera and lists some text passages useful for codicologica
 - layouts (CodPoemLayout[]):
   - range (AlnumRange)
   - layout (string) T:cod-poem-range-layouts
+- note (string)
 
 This is specific to Itinera and lists the order in which Petrarch's poems appear in a manuscript. To express this order in a compact yet computable manner, we use a set of alphanumeric ranges, each representing a single poem or a range of poems. The value for each poem starts with a number and may include an alphanumeric suffix after it.
 
@@ -221,5 +222,6 @@ Once the ranges have been selected by picking them from genres and/or entering t
 
 ## History
 
+- 2022-04-12: added `note` to `CodPoemRangesPart`.
 - 2022-03-26: upgraded packages.
 - 2022-03-05: upgraded packages.

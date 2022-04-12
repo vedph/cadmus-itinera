@@ -22,14 +22,14 @@ namespace Cadmus.Seed.Itinera.Parts.Codicology
             List<CodPoemLayout> layouts = new List<CodPoemLayout>();
             for (int n = 1; n <= 10; n++)
             {
+                int layout = f.Random.Number(0, 3);
                 layouts.Add(new CodPoemLayout
                 {
                     Range = new AlnumRange
                     {
                         A = n.ToString(CultureInfo.InvariantCulture)
                     },
-                    Layout = f.Random.Number(0, 3)
-                        .ToString(CultureInfo.InvariantCulture)
+                    Layout = layout == 0? "pr" : layout + "v"
                 });
             }
             return layouts;
@@ -60,8 +60,7 @@ namespace Cadmus.Seed.Itinera.Parts.Codicology
             CodPoemRangesPart part = new Faker<CodPoemRangesPart>()
                .RuleFor(p => p.Ranges,
                     f => new List<AlnumRange>(f.Random.Shuffle(ranges)))
-               // TODO: use thesaurus
-               .RuleFor(p => p.SortType, f => f.PickRandom("alpha", "beta"))
+               .RuleFor(p => p.SortType, f => f.PickRandom("petr", "non-petr"))
                .RuleFor(p => p.Layouts, f => GetLayouts(f))
                .Generate();
             SetPartMetadata(part, roleId, item);
