@@ -222,6 +222,7 @@ Once the ranges have been selected by picking them from genres and/or entering t
 
 ## History
 
+- 2022-04-29: upgraded to NET 6.0.
 - 2022-04-12: added `note` to `CodPoemRangesPart`.
 - 2022-03-26: upgraded packages.
 - 2022-03-05: upgraded packages.
