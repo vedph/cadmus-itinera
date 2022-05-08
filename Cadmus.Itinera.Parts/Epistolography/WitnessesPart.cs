@@ -36,7 +36,7 @@ namespace Cadmus.Itinera.Parts.Epistolography
         /// these keys: <c>id</c>.</returns>
         public override IEnumerable<DataPin> GetDataPins(IItem item = null)
         {
-            DataPinBuilder builder = new DataPinBuilder();
+            DataPinBuilder builder = new();
 
             builder.Set("tot", Witnesses?.Count ?? 0, false);
 
@@ -72,7 +72,7 @@ namespace Cadmus.Itinera.Parts.Epistolography
         /// </returns>
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new();
 
             sb.Append("[Witnesses]");
 

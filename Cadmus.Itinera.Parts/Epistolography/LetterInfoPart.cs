@@ -35,7 +35,7 @@ namespace Cadmus.Itinera.Parts.Epistolography
         /// <returns>The pins.</returns>
         public override IEnumerable<DataPin> GetDataPins(IItem item = null)
         {
-            DataPinBuilder builder = new DataPinBuilder(
+            DataPinBuilder builder = new(
                 new StandardDataPinTextFilter());
 
             builder.AddValue("subject", Subject, filter: true);

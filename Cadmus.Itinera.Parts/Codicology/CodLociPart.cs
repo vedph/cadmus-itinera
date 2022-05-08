@@ -36,7 +36,7 @@ namespace Cadmus.Itinera.Parts.Codicology
         /// these keys: ....</returns>
         public override IEnumerable<DataPin> GetDataPins(IItem item = null)
         {
-            DataPinBuilder builder = new DataPinBuilder();
+            DataPinBuilder builder = new();
 
             builder.Set("tot", Loci?.Count ?? 0, false);
 
@@ -72,7 +72,7 @@ namespace Cadmus.Itinera.Parts.Codicology
         /// </returns>
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new();
 
             sb.Append("[CodLoci]");
 

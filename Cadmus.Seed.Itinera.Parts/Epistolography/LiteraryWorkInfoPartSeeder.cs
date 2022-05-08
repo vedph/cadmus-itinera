@@ -33,13 +33,12 @@ namespace Cadmus.Seed.Itinera.Parts.Epistolography
             LiteraryWorkInfoPart part = new Faker<LiteraryWorkInfoPart>()
                .RuleFor(p => p.Languages,
                     f => new List<string> { f.PickRandom("lat", "grc") })
-               // TODO: use thesaurus
-               .RuleFor(p => p.Genre, f => f.PickRandom("alpha", "beta"))
-               // TODO: use thesaurus
+               .RuleFor(p => p.Genre, f => f.PickRandom("prose.-", "poetry.-"))
                .RuleFor(p => p.Metres,
-                    f => new List<string> { f.PickRandom("metre1", "metre2") })
+                    f => new List<string> { f.PickRandom("11s", "7s") })
                .RuleFor(p => p.Strophes,
                     f => new List<string> { f.PickRandom("s1", "s2") })
+               .RuleFor(p => p.Author, f => f.Person.LastName)
                .RuleFor(p => p.Titles, f => new List<AssertedTitle>
                {
                    new AssertedTitle

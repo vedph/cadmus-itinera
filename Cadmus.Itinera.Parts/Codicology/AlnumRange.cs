@@ -14,7 +14,7 @@ namespace Cadmus.Itinera.Parts.Codicology
     public class AlnumRange
     {
         private static readonly Regex _alnumRegex =
-            new Regex(@"([0-9]+)([^-\s]*)");
+            new(@"([0-9]+)([^-\s]*)");
 
         /// <summary>
         /// Gets or sets the start value in a range, or the unique value.

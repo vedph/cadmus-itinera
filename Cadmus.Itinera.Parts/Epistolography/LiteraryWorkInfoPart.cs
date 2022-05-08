@@ -39,6 +39,11 @@ namespace Cadmus.Itinera.Parts.Epistolography
         public bool IsLost { get; set; }
 
         /// <summary>
+        /// Gets or sets the author.
+        /// </summary>
+        public string Author { get; set; }
+
+        /// <summary>
         /// Gets or sets the work's title(s).
         /// </summary>
         public List<AssertedTitle> Titles { get; set; }
@@ -69,12 +74,12 @@ namespace Cadmus.Itinera.Parts.Epistolography
         /// <returns>The pins.</returns>
         public override IEnumerable<DataPin> GetDataPins(IItem item = null)
         {
-            DataPinBuilder builder = new DataPinBuilder(
-                new StandardDataPinTextFilter());
+            DataPinBuilder builder = new(new StandardDataPinTextFilter());
 
             builder.AddValues("language", Languages);
             builder.AddValue("genre", Genre);
             builder.AddValues("metre", Metres);
+            builder.AddValue("author", Author);
             builder.AddValues("title", Titles.Select(t => t.Value),
                 filter: true, filterOptions: true);
 
@@ -101,6 +106,10 @@ namespace Cadmus.Itinera.Parts.Epistolography
                     "The list of work's metres.",
                     "M"),
                  new DataPinDefinition(DataPinValueType.String,
+                    "author",
+                    "The work's author.",
+                    "M"),
+                 new DataPinDefinition(DataPinValueType.String,
                     "title",
                     "The list of work's titles.",
                     "Mf")
@@ -115,10 +124,11 @@ namespace Cadmus.Itinera.Parts.Epistolography
         /// </returns>
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new();
 
             sb.Append("[LiteraryWorkInfo]");
 
+            if (!string.IsNullOrEmpty(Author)) sb.Append(Author).Append(", ");
             if (Titles?.Count > 0) sb.Append(Titles[0].Value);
 
             return sb.ToString();

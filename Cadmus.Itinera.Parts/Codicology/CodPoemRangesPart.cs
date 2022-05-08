@@ -50,13 +50,13 @@ namespace Cadmus.Itinera.Parts.Codicology
         /// <returns>The pins.</returns>
         public override IEnumerable<DataPin> GetDataPins(IItem item = null)
         {
-            DataPinBuilder builder = new DataPinBuilder();
+            DataPinBuilder builder = new();
 
             builder.AddValue("sort-type", SortType);
 
             if (Layouts?.Count > 0)
             {
-                Dictionary<string, int> counts = new Dictionary<string, int>();
+                Dictionary<string, int> counts = new();
                 for (int i = 0; i < Layouts.Count; i++)
                 {
                     string key = Layouts[i].Layout;
