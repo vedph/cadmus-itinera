@@ -30,7 +30,7 @@ namespace Cadmus.Seed.Itinera.Parts
         /// <returns>References.</returns>
         public static List<DocReference> GetDocReferences(int min, int max)
         {
-            List<DocReference> refs = new List<DocReference>();
+            List<DocReference> refs = new();
 
             for (int n = 1; n <= Randomizer.Seed.Next(min, max + 1); n++)
             {
@@ -68,7 +68,7 @@ namespace Cadmus.Seed.Itinera.Parts
         /// <returns>References.</returns>
         public static List<Chronotope> GetChronotopes(int min, int max)
         {
-            List<Chronotope> refs = new List<Chronotope>();
+            List<Chronotope> refs = new();
 
             for (int n = 1; n <= Randomizer.Seed.Next(min, max + 1); n++)
             {
@@ -84,7 +84,7 @@ namespace Cadmus.Seed.Itinera.Parts
 
         public static List<DecoratedId> GetDecoratedIds(int min, int max)
         {
-            List<DecoratedId> ids = new List<DecoratedId>();
+            List<DecoratedId> ids = new();
 
             for (int n = 1; n <= Randomizer.Seed.Next(min, max + 1); n++)
             {
@@ -101,9 +101,9 @@ namespace Cadmus.Seed.Itinera.Parts
 
         public static List<string> GetExternalIds(int min, int max)
         {
-            List<string> ids = new List<string>();
+            List<string> ids = new();
 
-            Faker faker = new Faker();
+            Faker faker = new();
             for (int n = 1; n <= Randomizer.Seed.Next(min, max + 1); n++)
                 ids.Add(faker.Lorem.Word() + n);
 
@@ -122,7 +122,7 @@ namespace Cadmus.Seed.Itinera.Parts
 
         public static List<CodImage> GetCodImages(int count)
         {
-            List<CodImage> images = new List<CodImage>();
+            List<CodImage> images = new();
             for (int n = 1; n <= count; n++)
             {
                 images.Add(new Faker<CodImage>()

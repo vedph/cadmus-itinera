@@ -18,7 +18,7 @@ namespace Cadmus.Seed.Itinera.Parts.Epistolography
     {
         private static List<RelatedPerson> GetPersons(int count)
         {
-            List<RelatedPerson> persons = new List<RelatedPerson>();
+            List<RelatedPerson> persons = new();
             for (int n = 1; n <= count; n++)
             {
                 persons.Add(new Faker<RelatedPerson>()

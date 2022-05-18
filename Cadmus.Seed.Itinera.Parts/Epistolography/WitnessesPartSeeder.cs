@@ -18,7 +18,7 @@ namespace Cadmus.Seed.Itinera.Parts.Epistolography
     {
         public List<Witness> GetWitnesses(int count)
         {
-            List<Witness> witnesses = new List<Witness>();
+            List<Witness> witnesses = new();
             for (int n = 1; n <= count; n++)
             {
                 int start = Randomizer.Seed.Next(1, 51);

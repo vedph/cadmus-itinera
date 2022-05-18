@@ -17,7 +17,7 @@ namespace Cadmus.Seed.Itinera.Parts.Epistolography
     {
         private static List<ReferencedText> GetTexts(int count)
         {
-            List<ReferencedText> texts = new List<ReferencedText>();
+            List<ReferencedText> texts = new();
             for (int n = 1; n <= count; n++)
             {
                 texts.Add(new Faker<ReferencedText>()

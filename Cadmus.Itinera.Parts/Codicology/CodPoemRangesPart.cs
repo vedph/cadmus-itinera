@@ -17,19 +17,9 @@ namespace Cadmus.Itinera.Parts.Codicology
         public List<AlnumRange> Ranges { get; set; }
 
         /// <summary>
-        /// Gets or sets the type of the sort.
-        /// </summary>
-        public string SortType { get; set; }
-
-        /// <summary>
         /// Gets or sets the layouts.
         /// </summary>
         public List<CodPoemLayout> Layouts { get; set; }
-
-        /// <summary>
-        /// Gets or sets an optional note.
-        /// </summary>
-        public string Note { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CodPoemRangesPart"/>
@@ -52,13 +42,13 @@ namespace Cadmus.Itinera.Parts.Codicology
         {
             DataPinBuilder builder = new();
 
-            builder.AddValue("sort-type", SortType);
-
             if (Layouts?.Count > 0)
             {
                 Dictionary<string, int> counts = new();
                 for (int i = 0; i < Layouts.Count; i++)
                 {
+                    builder.AddValue("sort-type", Layouts[i].SortType);
+
                     string key = Layouts[i].Layout;
                     if (!counts.ContainsKey(key)) counts[key] = 0;
                     counts[key] += Layouts[i].Range.B != null
@@ -84,7 +74,8 @@ namespace Cadmus.Itinera.Parts.Codicology
             {
                 new DataPinDefinition(DataPinValueType.String,
                    "sort-type",
-                   "The sort type."),
+                   "The sort type.",
+                   "M"),
                 new DataPinDefinition(DataPinValueType.Integer,
                    "layout-<TYPE>-count",
                    "The total counts for each layout type.",
@@ -100,7 +91,7 @@ namespace Cadmus.Itinera.Parts.Codicology
         /// </returns>
         public override string ToString()
         {
-            return $"[CodPoemRanges]: {SortType}: {Layouts?.Count ?? 0}";
+            return $"[CodPoemRanges]: {Layouts?.Count ?? 0}";
         }
     }
 }

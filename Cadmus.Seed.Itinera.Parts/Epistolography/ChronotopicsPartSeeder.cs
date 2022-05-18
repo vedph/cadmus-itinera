@@ -34,7 +34,7 @@ namespace Cadmus.Seed.Itinera.Parts.Epistolography
             if (factory == null)
                 throw new ArgumentNullException(nameof(factory));
 
-            ChronotopicsPart part = new ChronotopicsPart();
+            ChronotopicsPart part = new();
             SetPartMetadata(part, roleId, item);
 
             for (int n = 1; n <= Randomizer.Seed.Next(1, 3 + 1); n++)

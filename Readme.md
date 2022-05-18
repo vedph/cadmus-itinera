@@ -190,11 +190,11 @@ This is specific to Itinera and lists some text passages useful for codicologica
 - ranges (AlnumRange[]):
   - a\* (string)
   - b (string)
-- sortType\* T:cod-poem-range-sort-types
 - layouts (CodPoemLayout[]):
   - range (AlnumRange)
+  - sortType\* T:cod-poem-range-sort-types
   - layout (string) T:cod-poem-range-layouts
-- note (string)
+  - note (string)
 
 This is specific to Itinera and lists the order in which Petrarch's poems appear in a manuscript. To express this order in a compact yet computable manner, we use a set of alphanumeric ranges, each representing a single poem or a range of poems. The value for each poem starts with a number and may include an alphanumeric suffix after it.
 
@@ -221,6 +221,12 @@ Each of these poems can have one of these layouts:
 Once the ranges have been selected by picking them from genres and/or entering them, users must specify the layout for each poem.
 
 ## History
+
+### 2.2.0
+
+- 2022-05-18: refactored PoemRanges: sortType and note moved into layouts. Updated packages.
+
+### 2.1.2
 
 - 2022-05-08: updated packages and added optional author to literary work info part.
 - 2022-04-29: upgraded to NET 6.0.

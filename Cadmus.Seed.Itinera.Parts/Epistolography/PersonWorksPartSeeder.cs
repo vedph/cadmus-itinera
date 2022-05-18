@@ -17,7 +17,7 @@ namespace Cadmus.Seed.Itinera.Parts.Epistolography
     {
         private static List<PersonWork> GetWorks(int count)
         {
-            List<PersonWork> works = new List<PersonWork>();
+            List<PersonWork> works = new();
             for (int n = 1; n <= count; n++)
             {
                 works.Add(new Faker<PersonWork>()

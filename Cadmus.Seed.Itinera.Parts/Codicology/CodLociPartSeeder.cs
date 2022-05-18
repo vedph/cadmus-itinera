@@ -18,7 +18,7 @@ namespace Cadmus.Seed.Itinera.Parts.Codicology
     {
         private static List<CodLocus> GetLoci(int count)
         {
-            List<CodLocus> loci = new List<CodLocus>();
+            List<CodLocus> loci = new();
             for (int n = 1; n <= count; n++)
             {
                 loci.Add(new Faker<CodLocus>()
