@@ -30,7 +30,7 @@ namespace Cadmus.Seed.Itinera.Parts.Codicology
                         A = n.ToString(CultureInfo.InvariantCulture)
                     },
                     Layout = layout == 0? "pr" : layout + "v",
-                    SortType = n % 2 == 0? "petr" : "non-petr"
+                    Note = n == 3? f.Lorem.Sentence() : null
                 });
             }
             return layouts;
@@ -61,6 +61,7 @@ namespace Cadmus.Seed.Itinera.Parts.Codicology
             CodPoemRangesPart part = new Faker<CodPoemRangesPart>()
                .RuleFor(p => p.Ranges,
                     f => new List<AlnumRange>(f.Random.Shuffle(ranges)))
+               .RuleFor(p => p.SortType, f => f.PickRandom("petr", "non-petr"))
                .RuleFor(p => p.Layouts, f => GetLayouts(f))
                .Generate();
             SetPartMetadata(part, roleId, item);

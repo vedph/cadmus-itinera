@@ -58,6 +58,7 @@ namespace Cadmus.Itinera.Parts.Test.Codicology
         public void GetDataPins_Ok()
         {
             CodPoemRangesPart part = GetEmptyPart();
+            part.SortType = "t";
 
             for (int n = 1; n <= 3; n++)
             {
@@ -69,8 +70,7 @@ namespace Cadmus.Itinera.Parts.Test.Codicology
                 {
                     Range = new AlnumRange
                         { A = n.ToString(CultureInfo.InvariantCulture) },
-                    Layout = n % 2 == 0 ? "l2" : "l1",
-                    SortType = "t"
+                    Layout = n % 2 == 0 ? "l2" : "l1"
                 });
             }
 

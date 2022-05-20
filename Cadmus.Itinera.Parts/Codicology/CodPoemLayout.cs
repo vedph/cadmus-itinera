@@ -16,11 +16,6 @@
         public string Layout { get; set; }
 
         /// <summary>
-        /// Gets or sets the type of the sort.
-        /// </summary>
-        public string SortType { get; set; }
-
-        /// <summary>
         /// Gets or sets an optional note.
         /// </summary>
         public string Note { get; set; }
@@ -33,7 +28,7 @@
         /// </returns>
         public override string ToString()
         {
-            return $"{Range}: {Layout} ({SortType})";
+            return $"{Range}: {Layout}";
         }
     }
 }

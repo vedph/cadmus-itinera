@@ -12,14 +12,26 @@ namespace Cadmus.Itinera.Parts.Codicology
     public sealed class CodPoemRangesPart : PartBase
     {
         /// <summary>
-        /// Gets or sets the ranges.
+        /// Gets or sets the poems ranges, defining the order and list of
+        /// poems included in the manuscript.
         /// </summary>
         public List<AlnumRange> Ranges { get; set; }
 
         /// <summary>
-        /// Gets or sets the layouts.
+        /// Gets or sets the sort order type used in this manuscript.
+        /// </summary>
+        public string SortType { get; set; }
+
+        /// <summary>
+        /// Gets or sets the text layouts for each poem included in this
+        /// manuscript.
         /// </summary>
         public List<CodPoemLayout> Layouts { get; set; }
+
+        /// <summary>
+        /// Gets or sets an optional note.
+        /// </summary>
+        public string Note { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CodPoemRangesPart"/>
@@ -40,15 +52,15 @@ namespace Cadmus.Itinera.Parts.Codicology
         /// <returns>The pins.</returns>
         public override IEnumerable<DataPin> GetDataPins(IItem item = null)
         {
-            DataPinBuilder builder = new();
+            DataPinBuilder builder = new DataPinBuilder();
+
+            builder.AddValue("sort-type", SortType);
 
             if (Layouts?.Count > 0)
             {
-                Dictionary<string, int> counts = new();
+                Dictionary<string, int> counts = new Dictionary<string, int>();
                 for (int i = 0; i < Layouts.Count; i++)
                 {
-                    builder.AddValue("sort-type", Layouts[i].SortType);
-
                     string key = Layouts[i].Layout;
                     if (!counts.ContainsKey(key)) counts[key] = 0;
                     counts[key] += Layouts[i].Range.B != null
@@ -74,8 +86,7 @@ namespace Cadmus.Itinera.Parts.Codicology
             {
                 new DataPinDefinition(DataPinValueType.String,
                    "sort-type",
-                   "The sort type.",
-                   "M"),
+                   "The sort type."),
                 new DataPinDefinition(DataPinValueType.Integer,
                    "layout-<TYPE>-count",
                    "The total counts for each layout type.",
@@ -91,7 +102,7 @@ namespace Cadmus.Itinera.Parts.Codicology
         /// </returns>
         public override string ToString()
         {
-            return $"[CodPoemRanges]: {Layouts?.Count ?? 0}";
+            return $"[CodPoemRanges]: {SortType}: {Layouts?.Count ?? 0}";
         }
     }
 }

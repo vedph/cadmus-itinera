@@ -24,7 +24,7 @@ namespace Cadmus.Itinera.Parts.Test.Epistolography
 
             for (int n = 1; n <= count; n++)
             {
-                HistoricalDate date = HistoricalDate.Parse(n + 1200 + " AD");
+                HistoricalDate date = HistoricalDate.Parse(n + 1200 + " AD")!;
                 var coords = new Chronotope
                 {
                     Tag = n % 2 == 0? "even" : "odd",
@@ -112,7 +112,7 @@ namespace Cadmus.Itinera.Parts.Test.Epistolography
 
             for (int n = 1; n <= 3; n++)
             {
-                HistoricalDate date = HistoricalDate.Parse(n + 1200 + " AD");
+                HistoricalDate date = HistoricalDate.Parse(n + 1200 + " AD")!;
                 double d = date.GetSortValue();
 
                 pin = pins.Find(p => p.Name == "date-value"
