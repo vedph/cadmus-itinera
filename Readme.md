@@ -223,6 +223,10 @@ Once the ranges have been selected by picking them from genres and/or entering t
 
 ## History
 
+### 2.2.2
+
+- 2022-06-17: updated packages.
+
 ### 2.2.1
 
 - 2022-05-19: refactored PoemRanges again.
