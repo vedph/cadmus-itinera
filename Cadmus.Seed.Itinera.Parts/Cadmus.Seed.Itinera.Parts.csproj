@@ -4,7 +4,7 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <TargetFramework>net6.0</TargetFramework>
-    <Version>2.2.2</Version>
+    <Version>2.2.3</Version>
     <Company>Fusi</Company>
     <Product>Cadmus</Product>
     <Description>Cadmus Itinera parts seeders</Description>
@@ -12,8 +12,8 @@
     <NeutralLanguage>en-US</NeutralLanguage>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <PackageTags>Cadmus;itinera seed</PackageTags>
-    <FileVersion>2.2.2</FileVersion>
-    <AssemblyVersion>2.2.2</AssemblyVersion>
+    <FileVersion>2.2.3</FileVersion>
+    <AssemblyVersion>2.2.3</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
