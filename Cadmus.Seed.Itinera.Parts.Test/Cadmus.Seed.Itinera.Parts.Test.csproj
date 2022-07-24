@@ -4,9 +4,9 @@
     <TargetFramework>net6.0</TargetFramework>
 	<Nullable>enable</Nullable>
     <IsPackable>false</IsPackable>
-    <Version>2.2.3</Version>
-    <FileVersion>2.2.3</FileVersion>
-    <AssemblyVersion>2.2.3</AssemblyVersion>
+    <Version>2.2.4</Version>
+    <FileVersion>2.2.4</FileVersion>
+    <AssemblyVersion>2.2.4</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>

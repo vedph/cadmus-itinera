@@ -29,6 +29,11 @@ namespace Cadmus.Itinera.Parts.Codicology
         public List<CodPoemLayout> Layouts { get; set; }
 
         /// <summary>
+        /// Gets or sets an optional tag.
+        /// </summary>
+        public string? Tag { get; set; }
+
+        /// <summary>
         /// Gets or sets an optional note.
         /// </summary>
         public string? Note { get; set; }

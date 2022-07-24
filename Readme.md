@@ -195,6 +195,7 @@ This is specific to Itinera and lists some text passages useful for codicologica
   - range (AlnumRange)
   - layout (string) T:cod-poem-range-layouts
   - note (string)
+- tag (string) T:cod-poem-range-tags
 - note (string)
 
 This is specific to Itinera and lists the order in which Petrarch's poems appear in a manuscript. To express this order in a compact yet computable manner, we use a set of alphanumeric ranges, each representing a single poem or a range of poems. The value for each poem starts with a number and may include an alphanumeric suffix after it.
@@ -223,9 +224,12 @@ Once the ranges have been selected by picking them from genres and/or entering t
 
 ## History
 
+### 2.2.4
+
 - 2022-07-24:
   - nullable projects.
   - changed `Range` to `Ranges` in `Witness`.
+  - added `Tag` to `CodPoemRangesPart`.
 
 ### 2.2.3
 
