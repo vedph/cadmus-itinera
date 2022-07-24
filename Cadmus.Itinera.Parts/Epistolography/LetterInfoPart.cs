@@ -14,17 +14,17 @@ namespace Cadmus.Itinera.Parts.Epistolography
         /// <summary>
         /// Gets or sets the subject.
         /// </summary>
-        public string Subject { get; set; }
+        public string? Subject { get; set; }
 
         /// <summary>
         /// Gets or sets the header.
         /// </summary>
-        public string Header { get; set; }
+        public string? Header { get; set; }
 
         /// <summary>
         /// Gets or sets the date as reported in the text.
         /// </summary>
-        public string TextDate { get; set; }
+        public string? TextDate { get; set; }
 
         /// <summary>
         /// Get all the key=value pairs (pins) exposed by the implementor.
@@ -33,7 +33,7 @@ namespace Cadmus.Itinera.Parts.Epistolography
         /// can optionally be passed to this method for those parts requiring
         /// to access further data.</param>
         /// <returns>The pins.</returns>
-        public override IEnumerable<DataPin> GetDataPins(IItem item = null)
+        public override IEnumerable<DataPin> GetDataPins(IItem? item = null)
         {
             DataPinBuilder builder = new(
                 new StandardDataPinTextFilter());

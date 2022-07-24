@@ -11,17 +11,17 @@ namespace Cadmus.Itinera.Parts.Codicology
         /// <summary>
         /// Gets or sets the passage citation.
         /// </summary>
-        public string Citation { get; set; }
+        public string? Citation { get; set; }
 
         /// <summary>
         /// Gets or sets the range covered by this passage in the manuscript.
         /// </summary>
-        public CodLocationRange Range { get; set; }
+        public CodLocationRange? Range { get; set; }
 
         /// <summary>
         /// Gets or sets the text.
         /// </summary>
-        public string Text { get; set; }
+        public string? Text { get; set; }
 
         /// <summary>
         /// Gets or sets the images.

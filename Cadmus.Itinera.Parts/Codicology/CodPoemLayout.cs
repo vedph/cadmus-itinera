@@ -8,17 +8,17 @@
         /// <summary>
         /// Gets or sets the range.
         /// </summary>
-        public AlnumRange Range { get; set; }
+        public AlnumRange? Range { get; set; }
 
         /// <summary>
         /// Gets or sets the layout.
         /// </summary>
-        public string Layout { get; set; }
+        public string? Layout { get; set; }
 
         /// <summary>
         /// Gets or sets an optional note.
         /// </summary>
-        public string Note { get; set; }
+        public string? Note { get; set; }
 
         /// <summary>
         /// Converts to string.

@@ -24,11 +24,15 @@ namespace Cadmus.Seed.Itinera.Parts.Epistolography
                 int start = Randomizer.Seed.Next(1, 51);
                 witnesses.Add(new Faker<Witness>()
                     .RuleFor(w => w.Id, f => f.Lorem.Word() + n)
-                    .RuleFor(w => w.Range, new CodLocationRange
-                    {
-                        Start = new CodLocation { N = start },
-                        End = new CodLocation { N = start }
-                    })
+                    .RuleFor(w => w.Ranges, new List<CodLocationRange>(
+                        new[]
+                        {
+                            new CodLocationRange
+                            {
+                                Start = new CodLocation { N = start },
+                                End = new CodLocation { N = start }
+                            }
+                        }))
                     .Generate());
             }
             return witnesses;
@@ -43,8 +47,8 @@ namespace Cadmus.Seed.Itinera.Parts.Epistolography
         /// for layer parts, which need to seed a set of fragments.</param>
         /// <returns>A new part.</returns>
         /// <exception cref="ArgumentNullException">item or factory</exception>
-        public override IPart GetPart(IItem item, string roleId,
-            PartSeederFactory factory)
+        public override IPart GetPart(IItem item, string? roleId,
+            PartSeederFactory? factory)
         {
             if (item == null)
                 throw new ArgumentNullException(nameof(item));

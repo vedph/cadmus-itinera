@@ -11,12 +11,12 @@ namespace Cadmus.Itinera.Parts.Epistolography
         /// <summary>
         /// Gets or sets the relation type.
         /// </summary>
-        public string Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// Gets or sets the person name in this relation.
         /// </summary>
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// Gets or sets the identifications for this type.

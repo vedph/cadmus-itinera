@@ -19,12 +19,12 @@ namespace Cadmus.Itinera.Parts.Codicology
         /// <summary>
         /// Gets or sets the start value in a range, or the unique value.
         /// </summary>
-        public string A { get; set; }
+        public string? A { get; set; }
 
         /// <summary>
         /// Gets or sets the end value in a range, or null for a unique value.
         /// </summary>
-        public string B { get; set; }
+        public string? B { get; set; }
 
         /// <summary>
         /// Parses the specified alphanumeric into its numeric value and suffix.
@@ -32,7 +32,7 @@ namespace Cadmus.Itinera.Parts.Codicology
         /// <param name="text">The text.</param>
         /// <returns>Tuple with 1=number 2=suffix if any, or null if invalid.
         /// </returns>
-        public static Tuple<int, string> ParseAlnum(string text)
+        public static Tuple<int, string?>? ParseAlnum(string? text)
         {
             if (string.IsNullOrEmpty(text)) return null;
 
@@ -87,7 +87,7 @@ namespace Cadmus.Itinera.Parts.Codicology
         /// <param name="start">The start.</param>
         /// <param name="end">The end.</param>
         /// <returns>List of alphanumerics.</returns>
-        public static int CountInterpolatedAlnums(string start, string end)
+        public static int CountInterpolatedAlnums(string? start, string? end)
         {
             if (start == end) return 1;
             var a = ParseAlnum(start);
@@ -109,7 +109,7 @@ namespace Cadmus.Itinera.Parts.Codicology
         /// </returns>
         public override string ToString()
         {
-            return string.IsNullOrEmpty(B) ? A : $"{A}-{B}";
+            return string.IsNullOrEmpty(B) ? A! : $"{A}-{B}";
         }
     }
 }

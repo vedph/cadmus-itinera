@@ -1,4 +1,5 @@
 ﻿using Cadmus.Codicology.Parts;
+using System.Collections.Generic;
 
 namespace Cadmus.Itinera.Parts.Epistolography
 {
@@ -10,12 +11,20 @@ namespace Cadmus.Itinera.Parts.Epistolography
         /// <summary>
         /// Gets or sets the identifier.
         /// </summary>
-        public string Id { get; set; }
+        public string? Id { get; set; }
 
         /// <summary>
-        /// Gets or sets the range covered by this witness in its manuscript.
+        /// Gets or sets the range(s) covered by this witness in its manuscript.
         /// </summary>
-        public CodLocationRange Range { get; set; }
+        public List<CodLocationRange> Ranges { get; set; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Witness"/> class.
+        /// </summary>
+        public Witness()
+        {
+            Ranges = new();
+        }
 
         /// <summary>
         /// Converts to string.
@@ -25,7 +34,7 @@ namespace Cadmus.Itinera.Parts.Epistolography
         /// </returns>
         public override string ToString()
         {
-            return $"{Id}: {Range}";
+            return Id ?? base.ToString()!;
         }
     }
 }

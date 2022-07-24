@@ -13,8 +13,8 @@ namespace Cadmus.Itinera.Parts.Test.Epistolography
         {
             var t = AlnumRange.ParseAlnum(text);
             Assert.NotNull(t);
-            Assert.Equal(t.Item1, n);
-            Assert.Equal(t.Item2, a);
+            Assert.Equal(t!.Item1, n);
+            Assert.Equal(t!.Item2, a);
         }
 
         [Theory]

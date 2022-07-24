@@ -11,17 +11,17 @@ namespace Cadmus.Itinera.Parts.Epistolography
         /// <summary>
         /// Gets or sets the title's language.
         /// </summary>
-        public string Language { get; set; }
+        public string? Language { get; set; }
 
         /// <summary>
         /// Gets or sets the title's value.
         /// </summary>
-        public string Value { get; set; }
+        public string? Value { get; set; }
 
         /// <summary>
         /// Gets or sets the assertion.
         /// </summary>
-        public Assertion Assertion { get; set; }
+        public Assertion? Assertion { get; set; }
 
         /// <summary>
         /// Converts to string.

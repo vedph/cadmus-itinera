@@ -21,7 +21,7 @@ namespace Cadmus.Itinera.Parts.Epistolography
         /// <summary>
         /// Gets or sets the genre the work belongs to.
         /// </summary>
-        public string Genre { get; set; }
+        public string? Genre { get; set; }
 
         /// <summary>
         /// Gets or sets the metre(s) used in the work.
@@ -41,7 +41,7 @@ namespace Cadmus.Itinera.Parts.Epistolography
         /// <summary>
         /// Gets or sets the author.
         /// </summary>
-        public string Author { get; set; }
+        public string? Author { get; set; }
 
         /// <summary>
         /// Gets or sets the work's title(s).
@@ -51,7 +51,7 @@ namespace Cadmus.Itinera.Parts.Epistolography
         /// <summary>
         /// Gets or sets an optional note.
         /// </summary>
-        public string Note { get; set; }
+        public string? Note { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="LiteraryWorkInfoPart"/>
@@ -72,7 +72,7 @@ namespace Cadmus.Itinera.Parts.Epistolography
         /// can optionally be passed to this method for those parts requiring
         /// to access further data.</param>
         /// <returns>The pins.</returns>
-        public override IEnumerable<DataPin> GetDataPins(IItem item = null)
+        public override IEnumerable<DataPin> GetDataPins(IItem? item = null)
         {
             DataPinBuilder builder = new(new StandardDataPinTextFilter());
 

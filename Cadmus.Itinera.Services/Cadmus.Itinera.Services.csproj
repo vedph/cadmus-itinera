@@ -3,6 +3,7 @@
   <PropertyGroup>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+	<Nullable>enable</Nullable>
     <TargetFramework>net6.0</TargetFramework>
     <Authors>Daniele Fusi</Authors>
     <Company>Fusi</Company>

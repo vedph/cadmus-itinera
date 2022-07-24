@@ -8,7 +8,7 @@
         /// <summary>
         /// Gets or sets the count's identifier.
         /// </summary>
-        public string Id { get; set; }
+        public string? Id { get; set; }
 
         /// <summary>
         /// Gets or sets the count's value.
@@ -18,7 +18,7 @@
         /// <summary>
         /// Gets or sets an optional note.
         /// </summary>
-        public string Note { get; set; }
+        public string? Note { get; set; }
 
         /// <summary>
         /// Converts to string.

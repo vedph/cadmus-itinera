@@ -25,7 +25,7 @@ namespace Cadmus.Itinera.Parts.Epistolography
         /// <summary>
         /// Gets or sets a bio summary.
         /// </summary>
-        public string Bio { get; set; }
+        public string? Bio { get; set; }
 
         /// <summary>
         /// Get all the key=value pairs (pins) exposed by the implementor.
@@ -34,7 +34,7 @@ namespace Cadmus.Itinera.Parts.Epistolography
         /// can optionally be passed to this method for those parts requiring
         /// to access further data.</param>
         /// <returns>The pins.</returns>
-        public override IEnumerable<DataPin> GetDataPins(IItem item)
+        public override IEnumerable<DataPin> GetDataPins(IItem? item)
         {
             return Sex != '\0'
                ? new[]

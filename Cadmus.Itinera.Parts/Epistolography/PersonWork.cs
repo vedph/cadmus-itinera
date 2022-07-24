@@ -10,17 +10,17 @@ namespace Cadmus.Itinera.Parts.Epistolography
         /// <summary>
         /// Gets or sets the entity ID for this work.
         /// </summary>
-        public string Eid { get; set; }
+        public string? Eid { get; set; }
 
         /// <summary>
         /// Gets or sets the title.
         /// </summary>
-        public string Title { get; set; }
+        public string? Title { get; set; }
 
         /// <summary>
         /// Gets or sets the assertion.
         /// </summary>
-        public Assertion Assertion { get; set; }
+        public Assertion? Assertion { get; set; }
 
         /// <summary>
         /// Converts to string.

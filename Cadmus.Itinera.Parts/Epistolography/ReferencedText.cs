@@ -11,17 +11,17 @@ namespace Cadmus.Itinera.Parts.Epistolography
         /// <summary>
         /// Gets or sets the reference type.
         /// </summary>
-        public string Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// Gets or sets the target identifier.
         /// </summary>
-        public string TargetId { get; set; }
+        public string? TargetId { get; set; }
 
         /// <summary>
         /// Gets or sets the target citation.
         /// </summary>
-        public string TargetCitation { get; set; }
+        public string? TargetCitation { get; set; }
 
         /// <summary>
         /// Gets or sets the source citations.
@@ -31,7 +31,15 @@ namespace Cadmus.Itinera.Parts.Epistolography
         /// <summary>
         /// Gets or sets the assertion.
         /// </summary>
-        public Assertion Assertion { get; set; }
+        public Assertion? Assertion { get; set; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReferencedText"/> class.
+        /// </summary>
+        public ReferencedText()
+        {
+            SourceCitations = new();
+        }
 
         /// <summary>
         /// Converts to string.

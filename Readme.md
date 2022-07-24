@@ -223,6 +223,10 @@ Once the ranges have been selected by picking them from genres and/or entering t
 
 ## History
 
+- 2022-07-24:
+  - nullable projects.
+  - changed `Range` to `Ranges` in `Witness`.
+
 ### 2.2.3
 
 - 2022-06-28: updated packages.

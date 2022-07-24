@@ -20,7 +20,7 @@ namespace Cadmus.Itinera.Parts.Codicology
         /// <summary>
         /// Gets or sets the sort order type used in this manuscript.
         /// </summary>
-        public string SortType { get; set; }
+        public string? SortType { get; set; }
 
         /// <summary>
         /// Gets or sets the text layouts for each poem included in this
@@ -31,7 +31,7 @@ namespace Cadmus.Itinera.Parts.Codicology
         /// <summary>
         /// Gets or sets an optional note.
         /// </summary>
-        public string Note { get; set; }
+        public string? Note { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CodPoemRangesPart"/>
@@ -50,22 +50,23 @@ namespace Cadmus.Itinera.Parts.Codicology
         /// can optionally be passed to this method for those parts requiring
         /// to access further data.</param>
         /// <returns>The pins.</returns>
-        public override IEnumerable<DataPin> GetDataPins(IItem item = null)
+        public override IEnumerable<DataPin> GetDataPins(IItem? item = null)
         {
-            DataPinBuilder builder = new DataPinBuilder();
+            DataPinBuilder builder = new();
 
             builder.AddValue("sort-type", SortType);
 
             if (Layouts?.Count > 0)
             {
-                Dictionary<string, int> counts = new Dictionary<string, int>();
+                Dictionary<string, int> counts = new();
                 for (int i = 0; i < Layouts.Count; i++)
                 {
-                    string key = Layouts[i].Layout;
+                    string? key = Layouts[i].Layout;
+                    if (key == null) continue;
                     if (!counts.ContainsKey(key)) counts[key] = 0;
-                    counts[key] += Layouts[i].Range.B != null
+                    counts[key] += Layouts[i].Range!.B != null
                         ? AlnumRange.CountInterpolatedAlnums(
-                            Layouts[i].Range.A, Layouts[i].Range.B)
+                            Layouts[i].Range!.A, Layouts[i].Range!.B)
                         : 1;
                 }
 

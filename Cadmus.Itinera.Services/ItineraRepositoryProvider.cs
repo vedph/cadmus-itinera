@@ -64,8 +64,7 @@ namespace Cadmus.Itinera.Services
         public ICadmusRepository CreateRepository()
         {
             // create the repository (no need to use container here)
-            MongoCadmusRepository repository =
-                new MongoCadmusRepository(
+            MongoCadmusRepository repository = new(
                     _partTypeProvider,
                     new StandardItemSortKeyBuilder());
 

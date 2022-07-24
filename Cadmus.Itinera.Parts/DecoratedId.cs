@@ -11,12 +11,12 @@ namespace Cadmus.Itinera.Parts
         /// <summary>
         /// ID.
         /// </summary>
-        public string Id { get; set; }
+        public string? Id { get; set; }
 
         /// <summary>
         /// Tag.
         /// </summary>
-        public string Tag { get; set; }
+        public string? Tag { get; set; }
 
         /// <summary>
         /// Rank.

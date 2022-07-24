@@ -41,7 +41,7 @@ namespace Cadmus.Itinera.Parts.Epistolography
         /// The normalized date value is a fixed-format number of type
         /// +0000.00 or -0000.00 allowing a text sort.
         /// </returns>
-        public override IEnumerable<DataPin> GetDataPins(IItem item)
+        public override IEnumerable<DataPin> GetDataPins(IItem? item)
         {
             DataPinBuilder builder = new(
                 DataPinHelper.DefaultFilter);
@@ -64,7 +64,7 @@ namespace Cadmus.Itinera.Parts.Epistolography
                                 true,
                                 coords.Place));
                     }
-                    if (coords.Date != null)
+                    if (coords.Date is not null)
                     {
                         double d = coords.Date.GetSortValue();
                         builder.AddValue("date-value", d);
