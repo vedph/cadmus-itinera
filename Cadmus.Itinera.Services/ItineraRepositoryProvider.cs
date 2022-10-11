@@ -5,33 +5,33 @@ using Cadmus.Core;
 using Cadmus.Core.Config;
 using Cadmus.Core.Storage;
 using Cadmus.General.Parts;
-using Cadmus.Itinera.Parts.Epistolography;
 using Cadmus.Mongo;
 using Cadmus.Philology.Parts;
-using Microsoft.Extensions.Configuration;
-using IConfiguration = Microsoft.Extensions.Configuration.IConfiguration;
+using Fusi.Tools.Config;
+using Cadmus.Itinera.Parts.Epistolography;
 
 namespace Cadmus.Itinera.Services
 {
     /// <summary>
     /// Cadmus Itinera repository provider.
     /// </summary>
+    [Tag("repository-provider.itinera")]
     public sealed class ItineraRepositoryProvider : IRepositoryProvider
     {
-        private readonly IConfiguration _configuration;
         private readonly IPartTypeProvider _partTypeProvider;
+
+        /// <summary>
+        /// The connection string.
+        /// </summary>
+        public string? ConnectionString { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="StandardRepositoryProvider"/>
         /// class.
         /// </summary>
-        /// <param name="configuration">The configuration.</param>
         /// <exception cref="ArgumentNullException">configuration</exception>
-        public ItineraRepositoryProvider(IConfiguration configuration)
+        public ItineraRepositoryProvider()
         {
-            _configuration = configuration ??
-                throw new ArgumentNullException(nameof(configuration));
-
             var map = new TagAttributeToTypeMap();
             map.Add(new[]
             {
@@ -70,9 +70,9 @@ namespace Cadmus.Itinera.Services
 
             repository.Configure(new MongoCadmusRepositoryOptions
             {
-                ConnectionString = string.Format(
-                    _configuration.GetConnectionString("Default"),
-                    _configuration.GetValue<string>("DatabaseNames:Data"))
+                ConnectionString = ConnectionString ??
+                    throw new InvalidOperationException(
+                    "No connection string set for IRepositoryProvider implementation")
             });
 
             return repository;
