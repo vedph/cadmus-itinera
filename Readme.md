@@ -224,6 +224,10 @@ Once the ranges have been selected by picking them from genres and/or entering t
 
 ## History
 
+### 2.3.1
+
+- 2022-10-24: updated packages.
+
 ### 2.3.0
 
 - 2022-10-10: updated packages for new `IRepositoryProvider`.
