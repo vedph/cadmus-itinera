@@ -41,7 +41,7 @@ namespace Cadmus.Itinera.Parts.Epistolography
             builder.Set("tot", Witnesses?.Count ?? 0, false);
 
             if (Witnesses?.Count > 0)
-                builder.AddValues("id", Witnesses.Select(w => w.Id));
+                builder.AddValues("id", Witnesses.Select(w => w.Id!));
 
             return builder.Build(this);
         }

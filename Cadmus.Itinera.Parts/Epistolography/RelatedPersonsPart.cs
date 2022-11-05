@@ -47,7 +47,7 @@ namespace Cadmus.Itinera.Parts.Epistolography
                 {
                     builder.AddValue("type", person.Type);
                     if (person.Ids?.Count > 0)
-                        builder.AddValues("target-id", person.Ids.Select(i => i.Value));
+                        builder.AddValues("target-id", person.Ids.Select(i => i.Value!));
                     builder.AddValue("name", person.Name,
                         filter: true, filterOptions: true);
                 }

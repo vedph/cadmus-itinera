@@ -23,7 +23,7 @@ namespace Cadmus.Itinera.Services
         /// <summary>
         /// The connection string.
         /// </summary>
-        public string? ConnectionString { get; set; }
+        public string ConnectionString { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="StandardRepositoryProvider"/>
@@ -32,6 +32,7 @@ namespace Cadmus.Itinera.Services
         /// <exception cref="ArgumentNullException">configuration</exception>
         public ItineraRepositoryProvider()
         {
+            ConnectionString = "";
             var map = new TagAttributeToTypeMap();
             map.Add(new[]
             {

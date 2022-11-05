@@ -80,7 +80,7 @@ namespace Cadmus.Itinera.Parts.Epistolography
             builder.AddValue("genre", Genre);
             builder.AddValues("metre", Metres);
             builder.AddValue("author", Author);
-            builder.AddValues("title", Titles.Select(t => t.Value),
+            builder.AddValues("title", Titles.Select(t => t.Value!),
                 filter: true, filterOptions: true);
 
             return builder.Build(this);

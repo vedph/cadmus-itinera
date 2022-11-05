@@ -100,7 +100,7 @@ namespace Cadmus.Itinera.Parts.Test
         {
             foreach (DataPin pin in pins)
             {
-                Assert.True(IsDataPinNameValid(pin.Name), pin.ToString());
+                Assert.True(IsDataPinNameValid(pin.Name!), pin.ToString());
             }
         }
     }

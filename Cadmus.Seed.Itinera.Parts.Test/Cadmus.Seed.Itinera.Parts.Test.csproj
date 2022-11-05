@@ -4,9 +4,9 @@
     <TargetFramework>net6.0</TargetFramework>
 	<Nullable>enable</Nullable>
     <IsPackable>false</IsPackable>
-    <Version>2.3.0</Version>
-    <FileVersion>2.3.0</FileVersion>
-    <AssemblyVersion>2.3.0</AssemblyVersion>
+    <Version>2.3.3</Version>
+    <FileVersion>2.3.3</FileVersion>
+    <AssemblyVersion>2.3.3</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -24,7 +24,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="coverlet.collector" Version="3.1.2">
+    <PackageReference Include="coverlet.collector" Version="3.2.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>

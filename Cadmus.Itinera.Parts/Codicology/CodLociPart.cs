@@ -41,7 +41,7 @@ namespace Cadmus.Itinera.Parts.Codicology
             builder.Set("tot", Loci?.Count ?? 0, false);
 
             if (Loci?.Count > 0)
-                builder.AddValues("citation", Loci.Select(l => l.Citation));
+                builder.AddValues("citation", Loci.Select(l => l.Citation!));
 
             return builder.Build(this);
         }
