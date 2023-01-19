@@ -9,7 +9,6 @@ using Cadmus.Mongo;
 using Cadmus.Philology.Parts;
 using Fusi.Tools.Config;
 using Cadmus.Itinera.Parts.Epistolography;
-using Cadmus.Epigraphy.Parts;
 using Cadmus.Geo.Parts;
 
 namespace Cadmus.Itinera.Services
@@ -46,8 +45,6 @@ namespace Cadmus.Itinera.Services
                 typeof(PersonInfoPart).GetTypeInfo().Assembly,
                 // Cadmus.Codicology.Parts
                 typeof(CodBindingsPart).GetTypeInfo().Assembly,
-                // Cadmus.Epigraphy.Parts
-                typeof(EpiSupportPart).GetTypeInfo().Assembly,
                 // Cadmus.Geo.Parts
                 typeof(AssertedLocationsPart).GetTypeInfo().Assembly,
             });

@@ -224,9 +224,9 @@ Once the ranges have been selected by picking them from genres and/or entering t
 
 ## History
 
-### 3.0.2
+### 3.0.3
 
-- 2023-01-19: added Cadmus geography and epigraphy packages to services.
+- 2023-01-19: added Cadmus geography packages to services.
 - 2022-12-22: updated test packages.
 
 ### 3.0.1

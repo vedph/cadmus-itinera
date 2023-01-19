@@ -1,7 +1,6 @@
 ﻿using Cadmus.Core.Config;
 using Cadmus.Seed;
 using Cadmus.Seed.Codicology.Parts;
-using Cadmus.Seed.Epigraphy.Parts;
 using Cadmus.Seed.General.Parts;
 using Cadmus.Seed.Geo.Parts;
 using Cadmus.Seed.Itinera.Parts.Epistolography;
@@ -42,8 +41,6 @@ namespace CadmusApi.Services
                 typeof(PersonInfoPartSeeder).GetTypeInfo().Assembly,
                 // Cadmus.Seed.Codicology.Parts
                 typeof(CodBindingsPartSeeder).GetTypeInfo().Assembly,
-                // Cadmus.Seed.Epigraphy.Parts
-                typeof(EpiSupportPartSeeder).GetTypeInfo().Assembly,
                 // Cadmus.Seed.Geo.Parts
                 typeof(AssertedLocationsPartSeeder).GetTypeInfo().Assembly,
             };
