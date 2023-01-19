@@ -1,7 +1,9 @@
 ﻿using Cadmus.Core.Config;
 using Cadmus.Seed;
 using Cadmus.Seed.Codicology.Parts;
+using Cadmus.Seed.Epigraphy.Parts;
 using Cadmus.Seed.General.Parts;
+using Cadmus.Seed.Geo.Parts;
 using Cadmus.Seed.Itinera.Parts.Epistolography;
 using Cadmus.Seed.Philology.Parts;
 using Fusi.Microsoft.Extensions.Configuration.InMemoryJson;
@@ -39,7 +41,11 @@ namespace CadmusApi.Services
                 // Cadmus.Seed.Itinera.Parts
                 typeof(PersonInfoPartSeeder).GetTypeInfo().Assembly,
                 // Cadmus.Seed.Codicology.Parts
-                typeof(CodBindingsPartSeeder).GetTypeInfo().Assembly
+                typeof(CodBindingsPartSeeder).GetTypeInfo().Assembly,
+                // Cadmus.Seed.Epigraphy.Parts
+                typeof(EpiSupportPartSeeder).GetTypeInfo().Assembly,
+                // Cadmus.Seed.Geo.Parts
+                typeof(AssertedLocationsPartSeeder).GetTypeInfo().Assembly,
             };
             TagAttributeToTypeMap map = new();
             map.Add(seedAssemblies);
