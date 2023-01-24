@@ -224,6 +224,10 @@ Once the ranges have been selected by picking them from genres and/or entering t
 
 ## History
 
+### 3.0.4
+
+- 2023-01-24: updated packages.
+
 ### 3.0.3
 
 - 2023-01-19: added Cadmus geography packages to services.
