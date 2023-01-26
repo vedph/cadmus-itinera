@@ -95,6 +95,11 @@ Additional information about a letter.
 
 Information about the literary work represented by the item.
 
+- authorIds (AssertedId[])
+  - tag (string)
+  - value\* (string)
+  - scope (string)
+  - assertion (Assertion)
 - languages\* (string[]) T:literary-work-languages
 - genre\* (string) T:literary-work-genres (hierarchical, single choice)
 - metres (string[]) T:literary-work-metres
@@ -223,6 +228,10 @@ Each of these poems can have one of these layouts:
 Once the ranges have been selected by picking them from genres and/or entering them, users must specify the layout for each poem.
 
 ## History
+
+### 3.1.0
+
+- 2023-01-26: replaced author with author IDs in literary work info part.
 
 ### 3.0.4
 

@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Text;
 using Cadmus.Core;
+using Cadmus.Refs.Bricks;
 using Fusi.Tools.Config;
 
 namespace Cadmus.Itinera.Parts.Epistolography
@@ -39,9 +40,9 @@ namespace Cadmus.Itinera.Parts.Epistolography
         public bool IsLost { get; set; }
 
         /// <summary>
-        /// Gets or sets the author.
+        /// Gets or sets the author ID(s).
         /// </summary>
-        public string? Author { get; set; }
+        public List<AssertedId> AuthorIds { get; set; }
 
         /// <summary>
         /// Gets or sets the work's title(s).
@@ -59,6 +60,7 @@ namespace Cadmus.Itinera.Parts.Epistolography
         /// </summary>
         public LiteraryWorkInfoPart()
         {
+            AuthorIds = new List<AssertedId>();
             Languages = new List<string>();
             Metres = new List<string>();
             Strophes = new List<string>();
@@ -79,9 +81,17 @@ namespace Cadmus.Itinera.Parts.Epistolography
             builder.AddValues("language", Languages);
             builder.AddValue("genre", Genre);
             builder.AddValues("metre", Metres);
-            builder.AddValue("author", Author);
-            builder.AddValues("title", Titles.Select(t => t.Value!),
-                filter: true, filterOptions: true);
+
+            if (AuthorIds?.Count > 0)
+            {
+                builder.AddValues("author", AuthorIds.Select(a => a.Value!));
+            }
+
+            if (Titles?.Count > 0)
+            {
+                builder.AddValues("title", Titles.Select(t => t.Value!),
+                    filter: true, filterOptions: true);
+            }
 
             return builder.Build(this);
         }
@@ -107,7 +117,7 @@ namespace Cadmus.Itinera.Parts.Epistolography
                     "M"),
                  new DataPinDefinition(DataPinValueType.String,
                     "author",
-                    "The work's author.",
+                    "The work's author ID(s).",
                     "M"),
                  new DataPinDefinition(DataPinValueType.String,
                     "title",
@@ -128,7 +138,8 @@ namespace Cadmus.Itinera.Parts.Epistolography
 
             sb.Append("[LiteraryWorkInfo]");
 
-            if (!string.IsNullOrEmpty(Author)) sb.Append(Author).Append(", ");
+            if (AuthorIds?.Count > 0)
+                sb.AppendJoin(", ", AuthorIds.Select(id => id.Value!)).Append(" - ");
             if (Titles?.Count > 0) sb.Append(Titles[0].Value);
 
             return sb.ToString();

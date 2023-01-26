@@ -1,6 +1,7 @@
 ﻿using Bogus;
 using Cadmus.Core;
 using Cadmus.Itinera.Parts.Epistolography;
+using Cadmus.Refs.Bricks;
 using Fusi.Tools.Config;
 using System;
 using System.Collections.Generic;
@@ -38,7 +39,13 @@ namespace Cadmus.Seed.Itinera.Parts.Epistolography
                     f => new List<string> { f.PickRandom("11s", "7s") })
                .RuleFor(p => p.Strophes,
                     f => new List<string> { f.PickRandom("s1", "s2") })
-               .RuleFor(p => p.Author, f => f.Person.LastName)
+               .RuleFor(p => p.AuthorIds, f => new List<AssertedId>
+               {
+                   new AssertedId
+                   {
+                       Value = f.Internet.UserName().ToLower(),
+                   }
+               })
                .RuleFor(p => p.Titles, f => new List<AssertedTitle>
                {
                    new AssertedTitle
