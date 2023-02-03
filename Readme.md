@@ -15,6 +15,27 @@
     - [CodLociPart](#codlocipart)
     - [CodPoemRangesPart](#codpoemrangespart)
   - [History](#history)
+    - [4.0.2](#402)
+    - [3.1.0](#310)
+    - [3.0.4](#304)
+    - [3.0.3](#303)
+    - [3.0.1](#301)
+    - [3.0.0](#300)
+    - [2.3.3](#233)
+    - [2.3.2](#232)
+    - [2.3.1](#231)
+    - [2.3.0](#230)
+    - [2.2.9](#229)
+    - [2.2.8](#228)
+    - [2.2.7](#227)
+    - [2.2.6](#226)
+    - [2.2.5](#225)
+    - [2.2.4](#224)
+    - [2.2.3](#223)
+    - [2.2.2](#222)
+    - [2.2.1](#221)
+    - [2.2.0](#220)
+    - [2.1.2](#212)
 
 Components for the _Itinera_ project in Cadmus. This library is derived from <https://github.com/vedph/cadmus_itinera> and will replace it once completed.
 
@@ -228,6 +249,14 @@ Each of these poems can have one of these layouts:
 Once the ranges have been selected by picking them from genres and/or entering them, users must specify the layout for each poem.
 
 ## History
+
+### 4.0.2
+
+- 2023-02-02: migrated to new components factory. This is a breaking change for backend components, please see [this page](https://myrmex.github.io/overview/cadmus/dev/history/#2023-02-01---backend-infrastructure-upgrade). Anyway, in the end you just have to update your libraries and a single namespace reference. Benefits include:
+  - more streamlined component instantiation.
+  - more functionality in components factory, including DI.
+  - dropped third party dependencies.
+  - adopted standard MS technologies for DI.
 
 ### 3.1.0
 

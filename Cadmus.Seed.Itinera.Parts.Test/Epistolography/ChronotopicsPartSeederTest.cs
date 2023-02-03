@@ -1,47 +1,46 @@
 ﻿using Cadmus.Core;
 using Cadmus.Itinera.Parts.Epistolography;
 using Cadmus.Seed.Itinera.Parts.Epistolography;
-using Fusi.Tools.Config;
+using Fusi.Tools.Configuration;
 using System;
 using System.Reflection;
 using Xunit;
 
-namespace Cadmus.Seed.Itinera.Parts.Test.Epistolography
+namespace Cadmus.Seed.Itinera.Parts.Test.Epistolography;
+
+public sealed class ChronotopicsPartSeederTest
 {
-    public sealed class ChronotopicsPartSeederTest
+    private static readonly PartSeederFactory _factory =
+            TestHelper.GetFactory();
+    private static readonly SeedOptions _seedOptions =
+        _factory.GetSeedOptions();
+    private static readonly IItem _item =
+        _factory.GetItemSeeder().GetItem(1, "facet");
+
+    [Fact]
+    public void TypeHasTagAttribute()
     {
-        private static readonly PartSeederFactory _factory =
-                TestHelper.GetFactory();
-        private static readonly SeedOptions _seedOptions =
-            _factory.GetSeedOptions();
-        private static readonly IItem _item =
-            _factory.GetItemSeeder().GetItem(1, "facet");
+        Type t = typeof(ChronotopicsPartSeeder);
+        TagAttribute? attr = t.GetTypeInfo().GetCustomAttribute<TagAttribute>();
+        Assert.NotNull(attr);
+        Assert.Equal("seed.it.vedph.itinera.chronotopics", attr!.Tag);
+    }
 
-        [Fact]
-        public void TypeHasTagAttribute()
-        {
-            Type t = typeof(ChronotopicsPartSeeder);
-            TagAttribute? attr = t.GetTypeInfo().GetCustomAttribute<TagAttribute>();
-            Assert.NotNull(attr);
-            Assert.Equal("seed.it.vedph.itinera.chronotopics", attr!.Tag);
-        }
+    [Fact]
+    public void Seed_Ok()
+    {
+        ChronotopicsPartSeeder seeder = new();
+        seeder.SetSeedOptions(_seedOptions);
 
-        [Fact]
-        public void Seed_Ok()
-        {
-            ChronotopicsPartSeeder seeder = new();
-            seeder.SetSeedOptions(_seedOptions);
+        IPart part = seeder.GetPart(_item, null, _factory);
 
-            IPart part = seeder.GetPart(_item, null, _factory);
+        Assert.NotNull(part);
 
-            Assert.NotNull(part);
+        ChronotopicsPart? p = part as ChronotopicsPart;
+        Assert.NotNull(p);
 
-            ChronotopicsPart? p = part as ChronotopicsPart;
-            Assert.NotNull(p);
+        TestHelper.AssertPartMetadata(p!);
 
-            TestHelper.AssertPartMetadata(p!);
-
-            Assert.NotEmpty(p!.Chronotopes);
-        }
+        Assert.NotEmpty(p!.Chronotopes);
     }
 }

@@ -1,34 +1,33 @@
-﻿namespace Cadmus.Itinera.Parts.Codicology
+﻿namespace Cadmus.Itinera.Parts.Codicology;
+
+/// <summary>
+/// The layout of a single range of poems used in <see cref="CodPoemRangesPart"/>.
+/// </summary>
+public class CodPoemLayout
 {
     /// <summary>
-    /// The layout of a single range of poems used in <see cref="CodPoemRangesPart"/>.
+    /// Gets or sets the range.
     /// </summary>
-    public class CodPoemLayout
+    public AlnumRange? Range { get; set; }
+
+    /// <summary>
+    /// Gets or sets the layout.
+    /// </summary>
+    public string? Layout { get; set; }
+
+    /// <summary>
+    /// Gets or sets an optional note.
+    /// </summary>
+    public string? Note { get; set; }
+
+    /// <summary>
+    /// Converts to string.
+    /// </summary>
+    /// <returns>
+    /// A <see cref="string" /> that represents this instance.
+    /// </returns>
+    public override string ToString()
     {
-        /// <summary>
-        /// Gets or sets the range.
-        /// </summary>
-        public AlnumRange? Range { get; set; }
-
-        /// <summary>
-        /// Gets or sets the layout.
-        /// </summary>
-        public string? Layout { get; set; }
-
-        /// <summary>
-        /// Gets or sets an optional note.
-        /// </summary>
-        public string? Note { get; set; }
-
-        /// <summary>
-        /// Converts to string.
-        /// </summary>
-        /// <returns>
-        /// A <see cref="string" /> that represents this instance.
-        /// </returns>
-        public override string ToString()
-        {
-            return $"{Range}: {Layout}";
-        }
+        return $"{Range}: {Layout}";
     }
 }
