@@ -15,6 +15,8 @@
     - [CodLociPart](#codlocipart)
     - [CodPoemRangesPart](#codpoemrangespart)
   - [History](#history)
+    - [4.0.4](#404)
+    - [4.0.3](#403)
     - [4.0.2](#402)
     - [3.1.0](#310)
     - [3.0.4](#304)
@@ -249,6 +251,10 @@ Each of these poems can have one of these layouts:
 Once the ranges have been selected by picking them from genres and/or entering them, users must specify the layout for each poem.
 
 ## History
+
+### 4.0.4
+
+- 2023-02-11: updated geo package.
 
 ### 4.0.3
 
