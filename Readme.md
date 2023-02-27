@@ -253,6 +253,10 @@ Once the ranges have been selected by picking them from genres and/or entering t
 
 ## History
 
+### 4.1.1
+
+- 2023-02-27: updated packages (modified event model in general parts).
+
 ### 4.1.0
 
 - 2023-02-27: updated packages (modified event model in general parts).
