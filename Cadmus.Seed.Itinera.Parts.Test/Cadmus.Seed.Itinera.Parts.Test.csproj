@@ -4,9 +4,9 @@
     <TargetFramework>net7.0</TargetFramework>
 	<Nullable>enable</Nullable>
     <IsPackable>false</IsPackable>
-    <Version>4.1.2</Version>
-    <FileVersion>4.1.2</FileVersion>
-    <AssemblyVersion>4.1.2</AssemblyVersion>
+    <Version>4.1.4</Version>
+    <FileVersion>4.1.4</FileVersion>
+    <AssemblyVersion>4.1.4</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
