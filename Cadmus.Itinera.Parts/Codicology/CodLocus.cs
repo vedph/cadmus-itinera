@@ -24,6 +24,11 @@ public class CodLocus
     public string? Text { get; set; }
 
     /// <summary>
+    /// Gets or sets an optional note.
+    /// </summary>
+    public string? Note { get; set; }
+
+    /// <summary>
     /// Gets or sets the images.
     /// </summary>
     public List<CodImage> Images { get; set; }

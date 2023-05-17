@@ -15,6 +15,7 @@
     - [CodLociPart](#codlocipart)
     - [CodPoemRangesPart](#codpoemrangespart)
   - [History](#history)
+    - [4.2.0](#420)
     - [4.1.5](#415)
     - [4.1.4](#414)
     - [4.1.3](#413)
@@ -210,6 +211,7 @@ This is specific to Itinera and lists some text passages useful for codicologica
   - citation\* (string)
   - range\* (CodLocationRange)
   - text\* (string)
+  - note (string)
   - images (CodImage[]):
     - id\* (string)
     - type\* (string) T:cod-image-types
@@ -257,6 +259,12 @@ Each of these poems can have one of these layouts:
 Once the ranges have been selected by picking them from genres and/or entering them, users must specify the layout for each poem.
 
 ## History
+
+### 4.2.0
+
+- 2023-05-17:
+  - updated Codicology packages.
+  - added `note` to `CodLocus`.
 
 ### 4.1.5
 
