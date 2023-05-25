@@ -125,10 +125,18 @@ Additional information about a letter.
 
 Information about the literary work represented by the item.
 
-- authorIds (AssertedId[])
-  - tag (string)
-  - value\* (string)
+- authorIds (AssertedCompositeId[])
+  - target (PinLinkTarget):
+    - gid\* (string
+    - label\* (string)
+    - itemId (string)
+    - partId (string)
+    - partTypeId (string)
+    - roleId (string)
+    - name (string)
+    - value (string)
   - scope (string)
+  - tag (string)
   - assertion (Assertion)
 - languages\* (string[]) T:literary-work-languages
 - genre\* (string) T:literary-work-genres (hierarchical, single choice)
@@ -140,6 +148,8 @@ Information about the literary work represented by the item.
   - value (string)
   - assertion (Assertion)
 - note (string)
+ 
+>`authorIds` was of type `AssertedId[]` in versions before 5.
 
 ### ReferencedTextsPart
 
@@ -163,11 +173,9 @@ Textual labels referencing a person to be identified.
 - persons (RelatedPerson[]):
   - type\* (string) T:related-person-types
   - name\* (string)
-  - ids\* (AssertedId[]):
-    - tag (string)
-    - value\* (string)
-    - scope (string)
-    - assertion (Assertion)
+  - ids\* (AssertedCompositeId[])
+
+>`ids` was of type `AssertedId[]` in versions before 5.
 
 ### WitnessesPart
 
@@ -259,6 +267,12 @@ Each of these poems can have one of these layouts:
 Once the ranges have been selected by picking them from genres and/or entering them, users must specify the layout for each poem.
 
 ## History
+
+### 5.0.0
+
+- 2023-05-25: updated packages (breaking change in parts introducing [AssertedCompositeId](https://github.com/vedph/cadmus-bricks-shell/blob/master/projects/myrmidon/cadmus-refs-asserted-ids/README.md#asserted-composite-id)):
+  - LiteraryWorkInfoPart
+  - RelatedPersonsPart
 
 ### 4.2.0
 

@@ -42,7 +42,7 @@ public sealed class LiteraryWorkInfoPart : PartBase
     /// <summary>
     /// Gets or sets the author ID(s).
     /// </summary>
-    public List<AssertedId> AuthorIds { get; set; }
+    public List<AssertedCompositeId> AuthorIds { get; set; }
 
     /// <summary>
     /// Gets or sets the work's title(s).
@@ -60,7 +60,7 @@ public sealed class LiteraryWorkInfoPart : PartBase
     /// </summary>
     public LiteraryWorkInfoPart()
     {
-        AuthorIds = new List<AssertedId>();
+        AuthorIds = new List<AssertedCompositeId>();
         Languages = new List<string>();
         Metres = new List<string>();
         Strophes = new List<string>();
@@ -84,7 +84,8 @@ public sealed class LiteraryWorkInfoPart : PartBase
 
         if (AuthorIds?.Count > 0)
         {
-            builder.AddValues("author", AuthorIds.Select(a => a.Value!));
+            builder.AddValues("author", AuthorIds
+                .Where(id => id.Target?.Gid != null).Select(a => a.Target!.Gid));
         }
 
         if (Titles?.Count > 0)
@@ -139,7 +140,11 @@ public sealed class LiteraryWorkInfoPart : PartBase
         sb.Append("[LiteraryWorkInfo]");
 
         if (AuthorIds?.Count > 0)
-            sb.AppendJoin(", ", AuthorIds.Select(id => id.Value!)).Append(" - ");
+        {
+            sb.AppendJoin(", ",
+                AuthorIds.Select(id => id.Target?.Gid ?? "")).Append(" - ");
+        }
+
         if (Titles?.Count > 0) sb.Append(Titles[0].Value);
 
         return sb.ToString();

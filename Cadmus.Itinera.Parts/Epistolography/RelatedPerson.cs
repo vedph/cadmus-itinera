@@ -21,14 +21,14 @@ public class RelatedPerson
     /// <summary>
     /// Gets or sets the identifications for this type.
     /// </summary>
-    public IList<AssertedId> Ids { get; set; }
+    public IList<AssertedCompositeId> Ids { get; set; }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="RelatedPerson"/> class.
     /// </summary>
     public RelatedPerson()
     {
-        Ids = new List<AssertedId>();
+        Ids = new List<AssertedCompositeId>();
     }
 
     /// <summary>

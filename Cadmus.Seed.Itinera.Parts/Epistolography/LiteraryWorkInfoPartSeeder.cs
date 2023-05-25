@@ -39,11 +39,15 @@ public sealed class LiteraryWorkInfoPartSeeder : PartSeederBase
                 f => new List<string> { f.PickRandom("11s", "7s") })
            .RuleFor(p => p.Strophes,
                 f => new List<string> { f.PickRandom("s1", "s2") })
-           .RuleFor(p => p.AuthorIds, f => new List<AssertedId>
+           .RuleFor(p => p.AuthorIds, f => new List<AssertedCompositeId>
            {
-               new AssertedId
+               new AssertedCompositeId
                {
-                   Value = f.Internet.UserName().ToLower(),
+                   Target = new PinTarget
+                   {
+                       Gid = f.Internet.UserName().ToLower(),
+                       Label = "target"
+                   }
                }
            })
            .RuleFor(p => p.Titles, f => new List<AssertedTitle>

@@ -81,11 +81,15 @@ public sealed class RelatedPersonsPartTest
             part.Persons.Add(new RelatedPerson
             {
                 Type = n % 2 == 0 ? "even" : "odd",
-                Ids = new List<AssertedId>
+                Ids = new List<AssertedCompositeId>
                 {
-                    new AssertedId
+                    new AssertedCompositeId
                     {
-                        Value = "target" + n
+                        Target = new PinTarget
+                        {
+                            Gid = "target" + n,
+                            Label = "target" + n,
+                        }
                     }
                 },
                 Name = "name" + n

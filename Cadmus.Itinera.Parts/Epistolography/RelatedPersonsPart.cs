@@ -36,8 +36,7 @@ public sealed class RelatedPersonsPart : PartBase
     /// these keys: <c>type</c>, <c>target-id</c>, <c>name</c>.</returns>
     public override IEnumerable<DataPin> GetDataPins(IItem? item = null)
     {
-        DataPinBuilder builder = new(
-            DataPinHelper.DefaultFilter);
+        DataPinBuilder builder = new(DataPinHelper.DefaultFilter);
 
         builder.Set("tot", Persons?.Count ?? 0, false);
 
@@ -47,7 +46,11 @@ public sealed class RelatedPersonsPart : PartBase
             {
                 builder.AddValue("type", person.Type);
                 if (person.Ids?.Count > 0)
-                    builder.AddValues("target-id", person.Ids.Select(i => i.Value!));
+                {
+                    builder.AddValues("target-id",
+                        person.Ids.Where(i => i.Target?.Gid != null)
+                        .Select(i => i.Target!.Gid));
+                }
                 builder.AddValue("name", person.Name,
                     filter: true, filterOptions: true);
             }

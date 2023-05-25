@@ -23,11 +23,15 @@ public sealed class RelatedPersonsPartSeeder : PartSeederBase
         {
             persons.Add(new Faker<RelatedPerson>()
                 .RuleFor(p => p.Type, f => f.PickRandom("alpha", "beta"))
-                .RuleFor(p => p.Ids, f => new List<AssertedId>
+                .RuleFor(p => p.Ids, f => new List<AssertedCompositeId>
                 {
-                    new AssertedId
+                    new AssertedCompositeId
                     {
-                        Value = f.Lorem.Word() + n
+                        Target = new PinTarget
+                        {
+                            Gid = f.Internet.Url() + "/" + n,
+                            Label = f.Lorem.Word() + n
+                        }
                     }
                 })
                 .RuleFor(p => p.Name, f => f.Person.FullName)
