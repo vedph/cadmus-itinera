@@ -15,6 +15,7 @@
     - [CodLociPart](#codlocipart)
     - [CodPoemRangesPart](#codpoemrangespart)
   - [History](#history)
+    - [5.0.0](#500)
     - [4.2.0](#420)
     - [4.1.5](#415)
     - [4.1.4](#414)
@@ -127,7 +128,7 @@ Information about the literary work represented by the item.
 
 - authorIds (AssertedCompositeId[])
   - target (PinLinkTarget):
-    - gid\* (string
+    - gid\* (string)
     - label\* (string)
     - itemId (string)
     - partId (string)
@@ -148,8 +149,8 @@ Information about the literary work represented by the item.
   - value (string)
   - assertion (Assertion)
 - note (string)
- 
->`authorIds` was of type `AssertedId[]` in versions before 5.
+
+>⚠️ `authorIds` was of type `AssertedId[]` in versions before 5.
 
 ### ReferencedTextsPart
 
@@ -175,7 +176,7 @@ Textual labels referencing a person to be identified.
   - name\* (string)
   - ids\* (AssertedCompositeId[])
 
->`ids` was of type `AssertedId[]` in versions before 5.
+>⚠️ `ids` was of type `AssertedId[]` in versions before 5.
 
 ### WitnessesPart
 
