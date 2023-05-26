@@ -16,7 +16,7 @@ public class ReferencedText
     /// <summary>
     /// Gets or sets the target identifier.
     /// </summary>
-    public string? TargetId { get; set; }
+    public AssertedCompositeId? TargetId { get; set; }
 
     /// <summary>
     /// Gets or sets the target citation.

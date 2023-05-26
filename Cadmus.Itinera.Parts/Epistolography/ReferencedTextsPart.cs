@@ -45,7 +45,7 @@ public sealed class ReferencedTextsPart : PartBase
             foreach (ReferencedText text in Texts)
             {
                 builder.AddValue("type", text.Type);
-                builder.AddValue("target-id", text.TargetId);
+                builder.AddValue("target-id", text.TargetId?.Target?.Gid);
             }
         }
 

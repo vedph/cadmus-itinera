@@ -150,7 +150,7 @@ Information about the literary work represented by the item.
   - assertion (Assertion)
 - note (string)
 
->⚠️ `authorIds` was of type `AssertedId[]` in versions before 5.
+>⚠ `authorIds` was of type `AssertedId[]` in versions before 5.
 
 ### ReferencedTextsPart
 
@@ -160,10 +160,12 @@ Special part about texts referenced by the item's text. This is a list of all th
 
 - texts (ReferencedText[]):
   - type\* (string) T:related-text-types
-  - targetId\* (string)
+  - targetId\* (AssertedCompositeId)
   - targetCitation (string)
   - sourceCitations (string[])
   - assertion (Assertion)
+ 
+>⚠ `authorIds` was of type `string` in versions before 5.
 
 ### RelatedPersonsPart
 
@@ -176,7 +178,7 @@ Textual labels referencing a person to be identified.
   - name\* (string)
   - ids\* (AssertedCompositeId[])
 
->⚠️ `ids` was of type `AssertedId[]` in versions before 5.
+>⚠ `ids` was of type `AssertedId[]` in versions before 5.
 
 ### WitnessesPart
 

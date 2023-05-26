@@ -1,5 +1,6 @@
 ﻿using Cadmus.Core;
 using Cadmus.Itinera.Parts.Epistolography;
+using Cadmus.Refs.Bricks;
 using Cadmus.Seed.Itinera.Parts.Epistolography;
 using System;
 using System.Collections.Generic;
@@ -80,7 +81,14 @@ public sealed class ReferencedTextsPartTest
             part.Texts.Add(new ReferencedText
             {
                 Type = "type" + n,
-                TargetId = "target" + n
+                TargetId = new AssertedCompositeId
+                {
+                    Target = new PinTarget
+                    {
+                        Gid = "target" + n,
+                        Label = "target" + n
+                    }
+                }
             });
         }
 

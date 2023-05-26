@@ -1,6 +1,7 @@
 ﻿using Bogus;
 using Cadmus.Core;
 using Cadmus.Itinera.Parts.Epistolography;
+using Cadmus.Refs.Bricks;
 using Fusi.Tools.Configuration;
 using System;
 using System.Collections.Generic;
@@ -23,7 +24,14 @@ public sealed class ReferencedTextsPartSeeder : PartSeederBase
             texts.Add(new Faker<ReferencedText>()
                 // TODO: use thesaurus
                 .RuleFor(t => t.Type, f => f.PickRandom("alpha", "beta"))
-                .RuleFor(t => t.TargetId, f => f.Lorem.Word() + n)
+                .RuleFor(t => t.TargetId, f => new AssertedCompositeId
+                {
+                    Target = new PinTarget
+                    {
+                        Gid = f.Internet.Url() + "/" + n,
+                        Label = f.Lorem.Word() + n
+                    }
+                })
                 .RuleFor(t => t.TargetCitation,
                     f => $"{n}." + f.Random.Number(1, 100))
                 .RuleFor(t => t.SourceCitations,
