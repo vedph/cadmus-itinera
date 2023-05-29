@@ -271,6 +271,10 @@ Once the ranges have been selected by picking them from genres and/or entering t
 
 ## History
 
+### 5.0.2
+
+- 2023-05-29: updated packages.
+
 ### 5.0.0
 
 - 2023-05-25: updated packages (breaking change in parts introducing [AssertedCompositeId](https://github.com/vedph/cadmus-bricks-shell/blob/master/projects/myrmidon/cadmus-refs-asserted-ids/README.md#asserted-composite-id)):
