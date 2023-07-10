@@ -277,6 +277,8 @@ Once the ranges have been selected by picking them from genres and/or entering t
 
 ## History
 
+- 2023-07-10: updated test packages.
+
 ### 6.0.4
 
 - 2023-06-23: updated packages.
