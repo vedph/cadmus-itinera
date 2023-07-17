@@ -15,6 +15,7 @@
     - [CodLociPart](#codlocipart)
     - [CodPoemRangesPart](#codpoemrangespart)
   - [History](#history)
+    - [6.0.5](#605)
     - [6.0.4](#604)
     - [6.0.3](#603)
     - [6.0.2](#602)
@@ -75,7 +76,7 @@ Persons belong to the epistolographic area of the project. Most parts here are g
 - [PersonInfoPart](#personinfopart)\*
 - [NamesPart](https://github.com/vedph/cadmus-general#namespart)
 - [PersonWorksPart](#personworkspart)
-- ExternalIdsPart
+- `ExternalIdsPart`
 - [HistoricalEventsPart](https://github.com/vedph/cadmus-general#historicaleventspart)
 - [ExtBibliographyPart](https://github.com/vedph/cadmus-general#extbibliographypart)
 - [NotePart](https://github.com/vedph/cadmus-general#notepart)
@@ -108,7 +109,7 @@ A literary text. Most of its parts are specific to the Itinera project.
 - [LetterInfoPart](#letterinfopart)
 - [ChronotopesPart](https://github.com/vedph/cadmus-general#chronotopespart)\*
 - [MetadataPart](https://github.com/vedph/cadmus-general#metadatapart)
-- ExternalIdsPart
+- `ExternalIdsPart`
 - [ReferencedTextsPart](#referencedtextspart)
 - [RelatedPersonsPart](#relatedpersonspart) (role=`cited`)
 - [RelatedPersonsPart](#relatedpersonspart) (role=`recipients`)
@@ -277,6 +278,9 @@ Once the ranges have been selected by picking them from genres and/or entering t
 
 ## History
 
+### 6.0.5
+
+- 2023-07-17: updated codicology (added `ids` to hand).
 - 2023-07-10: updated test packages.
 
 ### 6.0.4
