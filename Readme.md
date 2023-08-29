@@ -280,6 +280,10 @@ Once the ranges have been selected by picking them from genres and/or entering t
 
 ## History
 
+### 6.0.8
+
+- 2023-08-29: updated packages.
+
 ### 6.0.7
 
 - 2023-08-09: updated packages.
