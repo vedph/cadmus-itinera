@@ -11,22 +11,22 @@
     <Description>Cadmus Itinera project services.</Description>
     <Copyright>By Daniele Fusi 2020</Copyright>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <Version>6.0.8</Version>
+    <Version>6.0.9</Version>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <PackageTags>Cadmus;itinera</PackageTags>
-    <FileVersion>6.0.8</FileVersion>
-    <AssemblyVersion>6.0.8</AssemblyVersion>
+    <FileVersion>6.0.9</FileVersion>
+    <AssemblyVersion>6.0.9</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Cadmus.Core" Version="6.1.4" />
-    <PackageReference Include="Cadmus.General.Parts" Version="5.0.4" />
-    <PackageReference Include="Cadmus.Mongo" Version="6.1.14" />
-    <PackageReference Include="Cadmus.Philology.Parts" Version="7.0.2" />
-    <PackageReference Include="Cadmus.Seed.Codicology.Parts" Version="5.0.9" />
-    <PackageReference Include="Cadmus.Seed.General.Parts" Version="5.0.4" />
-    <PackageReference Include="Cadmus.Seed.Geo.Parts" Version="2.0.1" />
-    <PackageReference Include="Cadmus.Seed.Philology.Parts" Version="7.0.2" />
+    <PackageReference Include="Cadmus.Core" Version="6.1.16" />
+    <PackageReference Include="Cadmus.General.Parts" Version="5.0.5" />
+    <PackageReference Include="Cadmus.Mongo" Version="6.1.16" />
+    <PackageReference Include="Cadmus.Philology.Parts" Version="7.0.3" />
+    <PackageReference Include="Cadmus.Seed.Codicology.Parts" Version="5.0.10" />
+    <PackageReference Include="Cadmus.Seed.General.Parts" Version="5.0.5" />
+    <PackageReference Include="Cadmus.Seed.Geo.Parts" Version="2.0.2" />
+    <PackageReference Include="Cadmus.Seed.Philology.Parts" Version="7.0.3" />
   </ItemGroup>
 
   <ItemGroup>
