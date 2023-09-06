@@ -22,8 +22,7 @@ public sealed class ReferencedTextsPartSeeder : PartSeederBase
         for (int n = 1; n <= count; n++)
         {
             texts.Add(new Faker<ReferencedText>()
-                // TODO: use thesaurus
-                .RuleFor(t => t.Type, f => f.PickRandom("alpha", "beta"))
+                .RuleFor(t => t.Type, f => f.PickRandom("reply-to", "quotation-of"))
                 .RuleFor(t => t.TargetId, f => new AssertedCompositeId
                 {
                     Target = new PinTarget
@@ -36,7 +35,6 @@ public sealed class ReferencedTextsPartSeeder : PartSeederBase
                     f => $"{n}." + f.Random.Number(1, 100))
                 .RuleFor(t => t.SourceCitations,
                     f => new List<string> { $"{n}." + f.Random.Number(1, 100) })
-                .RuleFor(t => t.Assertion, SeederHelper.GetAssertion())
                 .Generate());
         }
         return texts;

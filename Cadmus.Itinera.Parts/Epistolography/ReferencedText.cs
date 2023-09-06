@@ -14,24 +14,20 @@ public class ReferencedText
     public string? Type { get; set; }
 
     /// <summary>
-    /// Gets or sets the target identifier.
+    /// Gets or sets the target work's identifier.
     /// </summary>
     public AssertedCompositeId? TargetId { get; set; }
 
     /// <summary>
-    /// Gets or sets the target citation.
+    /// Gets or sets the target work's citation.
     /// </summary>
     public string? TargetCitation { get; set; }
 
     /// <summary>
-    /// Gets or sets the source citations.
+    /// Gets or sets the source citation(s) from the work represented by the
+    /// part's item.
     /// </summary>
     public List<string> SourceCitations { get; set; }
-
-    /// <summary>
-    /// Gets or sets the assertion.
-    /// </summary>
-    public Assertion? Assertion { get; set; }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="ReferencedText"/> class.

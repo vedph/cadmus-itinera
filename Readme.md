@@ -15,6 +15,7 @@
     - [CodLociPart](#codlocipart)
     - [CodPoemRangesPart](#codpoemrangespart)
   - [History](#history)
+    - [6.1.0](#610)
     - [6.0.9](#609)
     - [6.0.8](#608)
     - [6.0.7](#607)
@@ -174,9 +175,6 @@ Special part about texts referenced by the item's text. This is a list of all th
   - targetId\* (AssertedCompositeId)
   - targetCitation (string)
   - sourceCitations (string[])
-  - assertion (Assertion)
- 
->⚠ `authorIds` was of type `string` in versions before 5.
 
 ### RelatedPersonsPart
 
@@ -281,6 +279,10 @@ Each of these poems can have one of these layouts:
 Once the ranges have been selected by picking them from genres and/or entering them, users must specify the layout for each poem.
 
 ## History
+
+### 6.1.0
+
+- 2023-09-06: removed redundant `Assertion` from `ReferencedText`. Now the assertion already appears in the asserted composite ID representing the referenced text's target work.
 
 ### 6.0.9
 
