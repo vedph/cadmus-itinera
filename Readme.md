@@ -1,66 +1,5 @@
 # Cadmus Itinera Parts
 
-- [Cadmus Itinera Parts](#cadmus-itinera-parts)
-  - [Overview](#overview)
-  - [Person Item](#person-item)
-    - [PersonInfoPart](#personinfopart)
-    - [PersonWorksPart](#personworkspart)
-  - [Literary Text Item](#literary-text-item)
-    - [LetterInfoPart](#letterinfopart)
-    - [LiteraryWorkInfoPart](#literaryworkinfopart)
-    - [ReferencedTextsPart](#referencedtextspart)
-    - [RelatedPersonsPart](#relatedpersonspart)
-    - [WitnessesPart](#witnessespart)
-  - [Manuscript Item](#manuscript-item)
-    - [CodLociPart](#codlocipart)
-    - [CodPoemRangesPart](#codpoemrangespart)
-  - [History](#history)
-    - [7.0.0](#700)
-    - [6.1.1](#611)
-    - [6.1.0](#610)
-    - [6.0.9](#609)
-    - [6.0.8](#608)
-    - [6.0.7](#607)
-    - [6.0.6](#606)
-    - [6.0.5](#605)
-    - [6.0.4](#604)
-    - [6.0.3](#603)
-    - [6.0.2](#602)
-    - [6.0.0](#600)
-    - [5.0.3](#503)
-    - [5.0.2](#502)
-    - [5.0.0](#500)
-    - [4.2.0](#420)
-    - [4.1.5](#415)
-    - [4.1.4](#414)
-    - [4.1.3](#413)
-    - [4.1.2](#412)
-    - [4.1.1](#411)
-    - [4.1.0](#410)
-    - [4.0.4](#404)
-    - [4.0.3](#403)
-    - [4.0.2](#402)
-    - [3.1.0](#310)
-    - [3.0.4](#304)
-    - [3.0.3](#303)
-    - [3.0.1](#301)
-    - [3.0.0](#300)
-    - [2.3.3](#233)
-    - [2.3.2](#232)
-    - [2.3.1](#231)
-    - [2.3.0](#230)
-    - [2.2.9](#229)
-    - [2.2.8](#228)
-    - [2.2.7](#227)
-    - [2.2.6](#226)
-    - [2.2.5](#225)
-    - [2.2.4](#224)
-    - [2.2.3](#223)
-    - [2.2.2](#222)
-    - [2.2.1](#221)
-    - [2.2.0](#220)
-    - [2.1.2](#212)
-
 Components for the _Itinera_ project in Cadmus. This library is derived from <https://github.com/vedph/cadmus_itinera> and will replace it once completed.
 
 All the generic codicological components have been moved to an [independent library](https://github.com/vedph/cadmus-codicology).
@@ -281,6 +220,10 @@ Each of these poems can have one of these layouts:
 Once the ranges have been selected by picking them from genres and/or entering them, users must specify the layout for each poem.
 
 ## History
+
+### 7.0.1
+
+- 2024-06-24: updated packages.
 
 ### 7.0.0
 
