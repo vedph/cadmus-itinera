@@ -221,6 +221,10 @@ Once the ranges have been selected by picking them from genres and/or entering t
 
 ## History
 
+### 7.0.2
+
+- 2024-07-19: updated packages.
+
 ### 7.0.1
 
 - 2024-06-24: updated packages.
