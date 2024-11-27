@@ -1,34 +1,34 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <TargetFramework>net8.0</TargetFramework>
-	<Nullable>enable</Nullable>
-    <Authors>Daniele Fusi</Authors>
-    <Company>Fusi</Company>
-    <Product>Cadmus</Product>
-    <Description>Cadmus components for the Itinera project.</Description>
-    <NeutralLanguage>en-US</NeutralLanguage>
-    <Version>7.0.2</Version>
-    <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
-    <Copyright>by Daniele Fusi</Copyright>
-    <PackageTags>Cadmus;itinera parts</PackageTags>
-    <FileVersion>7.0.2</FileVersion>
-    <AssemblyVersion>7.0.2</AssemblyVersion>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<Nullable>enable</Nullable>
+		<Authors>Daniele Fusi</Authors>
+		<Company>Fusi</Company>
+		<Product>Cadmus</Product>
+		<Description>Cadmus components for the Itinera project.</Description>
+		<NeutralLanguage>en-US</NeutralLanguage>
+		<Version>8.0.0</Version>
+		<PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
+		<Copyright>by Daniele Fusi</Copyright>
+		<PackageTags>Cadmus;itinera parts</PackageTags>
+		<FileVersion>8.0.0</FileVersion>
+		<AssemblyVersion>8.0.0</AssemblyVersion>
+	</PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>.\bin\Debug\netstandard2.0\Cadmus.Itinera.Parts.xml</DocumentationFile>
-  </PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<DocumentationFile>.\bin\Debug\netstandard2.0\Cadmus.Itinera.Parts.xml</DocumentationFile>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Cadmus.Codicology.Parts" Version="6.0.4" />
-    <PackageReference Include="Cadmus.Core" Version="7.0.3" />
-    <PackageReference Include="Cadmus.Mat.Bricks" Version="5.0.4" />
-    <PackageReference Include="Cadmus.Prosopa.Bricks" Version="1.0.0" />
-    <PackageReference Include="Cadmus.Refs.Bricks" Version="5.0.2" />
-    <PackageReference Include="Fusi.Antiquity" Version="4.0.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Cadmus.Codicology.Parts" Version="7.0.0" />
+		<PackageReference Include="Cadmus.Core" Version="8.0.0" />
+		<PackageReference Include="Cadmus.Mat.Bricks" Version="6.0.0" />
+		<PackageReference Include="Cadmus.Prosopa.Bricks" Version="1.0.0" />
+		<PackageReference Include="Cadmus.Refs.Bricks" Version="6.0.0" />
+		<PackageReference Include="Fusi.Antiquity" Version="5.0.0" />
+	</ItemGroup>
 
 </Project>
