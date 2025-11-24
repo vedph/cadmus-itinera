@@ -221,6 +221,10 @@ Once the ranges have been selected by picking them from genres and/or entering t
 
 ## History
 
+### 9.0.0
+
+- 2025-11-24: ⚠️ upgraded to NET 10.
+
 ### 8.0.4
 
 - 2025-07-16: updated packages.
