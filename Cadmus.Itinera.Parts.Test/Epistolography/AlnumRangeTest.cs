@@ -9,7 +9,7 @@ public sealed class AlnumRangeTest
     [InlineData("12", 12, null)]
     [InlineData("12a", 12, "a")]
     [InlineData("12ab34", 12, "ab34")]
-    public void ParseAlnum_Ok(string text, int n, string a)
+    public void ParseAlnum_Ok(string text, int n, string? a)
     {
         var t = AlnumRange.ParseAlnum(text);
         Assert.NotNull(t);

@@ -13,20 +13,20 @@
 		<NeutralLanguage>en-US</NeutralLanguage>
 		<PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
 		<PackageTags>Cadmus;itinera</PackageTags>
-		<Version>9.0.0</Version>
-		<FileVersion>9.0.0</FileVersion>
-		<AssemblyVersion>9.0.0</AssemblyVersion>
+		<Version>9.0.1</Version>
+		<FileVersion>9.0.1</FileVersion>
+		<AssemblyVersion>9.0.1</AssemblyVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Cadmus.Core" Version="10.0.0" />
-		<PackageReference Include="Cadmus.General.Parts" Version="8.0.0" />
-		<PackageReference Include="Cadmus.Mongo" Version="10.0.0" />
-		<PackageReference Include="Cadmus.Philology.Parts" Version="12.0.0" />
-		<PackageReference Include="Cadmus.Seed.Codicology.Parts" Version="9.0.0" />
-		<PackageReference Include="Cadmus.Seed.General.Parts" Version="8.0.0" />
-		<PackageReference Include="Cadmus.Seed.Geo.Parts" Version="5.0.0" />
-		<PackageReference Include="Cadmus.Seed.Philology.Parts" Version="12.0.0" />
+		<PackageReference Include="Cadmus.Core" Version="10.0.2" />
+		<PackageReference Include="Cadmus.General.Parts" Version="8.0.1" />
+		<PackageReference Include="Cadmus.Mongo" Version="10.0.2" />
+		<PackageReference Include="Cadmus.Philology.Parts" Version="12.0.1" />
+		<PackageReference Include="Cadmus.Seed.Codicology.Parts" Version="9.0.2" />
+		<PackageReference Include="Cadmus.Seed.General.Parts" Version="8.0.1" />
+		<PackageReference Include="Cadmus.Seed.Geo.Parts" Version="5.0.1" />
+		<PackageReference Include="Cadmus.Seed.Philology.Parts" Version="12.0.1" />
 	</ItemGroup>
 
 	<ItemGroup>
