@@ -1,0 +1,15 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="Cadmus.Itinera.shfbproj" />
+    <File Path="Cli.ps1" />
+    <File Path="Pack.bat" />
+    <File Path="Push.bat" />
+    <File Path="PushLocal.bat" />
+    <File Path="Readme.md" />
+  </Folder>
+  <Project Path="Cadmus.Itinera.Parts.Test/Cadmus.Itinera.Parts.Test.csproj" />
+  <Project Path="Cadmus.Itinera.Parts/Cadmus.Itinera.Parts.csproj" />
+  <Project Path="Cadmus.Itinera.Services/Cadmus.Itinera.Services.csproj" />
+  <Project Path="Cadmus.Seed.Itinera.Parts.Test/Cadmus.Seed.Itinera.Parts.Test.csproj" />
+  <Project Path="Cadmus.Seed.Itinera.Parts/Cadmus.Seed.Itinera.Parts.csproj" />
+</Solution>
