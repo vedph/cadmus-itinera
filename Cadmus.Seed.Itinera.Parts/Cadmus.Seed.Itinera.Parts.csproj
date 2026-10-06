@@ -12,15 +12,23 @@
 		<NeutralLanguage>en-US</NeutralLanguage>
 		<PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
 		<PackageTags>Cadmus;itinera seed</PackageTags>
-		<Version>9.0.3</Version>
-		<FileVersion>9.0.3</FileVersion>
-		<AssemblyVersion>9.0.3</AssemblyVersion>
+		<Version>9.0.4</Version>
+		<FileVersion>9.0.4</FileVersion>
+		<AssemblyVersion>9.0.4</AssemblyVersion>
+		<DebugType>portable</DebugType>
+		<DebugSymbols>true</DebugSymbols>
+		<!-- SourceLink-related -->
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+		<Deterministic>true</Deterministic>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Bogus" Version="35.6.5" />
 		<PackageReference Include="Cadmus.Seed" Version="16.0.7" />
 		<PackageReference Include="Fusi.Microsoft.Extensions.Configuration.InMemoryJson" Version="5.0.0" />
+		<PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All" Version="10.0.401" />
 	</ItemGroup>
 
 	<ItemGroup>

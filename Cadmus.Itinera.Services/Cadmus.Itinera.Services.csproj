@@ -13,9 +13,20 @@
 		<NeutralLanguage>en-US</NeutralLanguage>
 		<PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
 		<PackageTags>Cadmus;itinera</PackageTags>
-		<Version>9.0.3</Version>
-		<FileVersion>9.0.3</FileVersion>
-		<AssemblyVersion>9.0.3</AssemblyVersion>
+		<Version>9.0.4</Version>
+		<FileVersion>9.0.4</FileVersion>
+		<AssemblyVersion>9.0.4</AssemblyVersion>
+		<DebugType>portable</DebugType>
+		<DebugSymbols>true</DebugSymbols>
+		<!-- SourceLink-related -->
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+		<Deterministic>true</Deterministic>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -23,10 +34,11 @@
 		<PackageReference Include="Cadmus.General.Parts" Version="16.0.7" />
 		<PackageReference Include="Cadmus.Mongo" Version="16.0.7" />
 		<PackageReference Include="Cadmus.Philology.Parts" Version="16.0.7" />
-		<PackageReference Include="Cadmus.Seed.Codicology.Parts" Version="9.0.7" />
+		<PackageReference Include="Cadmus.Seed.Codicology.Parts" Version="9.0.8" />
 		<PackageReference Include="Cadmus.Seed.General.Parts" Version="16.0.7" />
 		<PackageReference Include="Cadmus.Seed.Geo.Parts" Version="6.0.6" />
 		<PackageReference Include="Cadmus.Seed.Philology.Parts" Version="16.0.7" />
+		<PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All" Version="10.0.401" />
 	</ItemGroup>
 
 	<ItemGroup>

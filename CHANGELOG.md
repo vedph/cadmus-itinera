@@ -1,5 +1,11 @@
 # History
 
+## 9.0.4
+
+- 2026-10-06:
+  - updated packages.
+  - configured packaging metadata for NuGet libraries.
+
 ## 9.0.3
 
 - 2026-09-29:

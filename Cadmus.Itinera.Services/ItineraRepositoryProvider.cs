@@ -27,7 +27,7 @@ public sealed class ItineraRepositoryProvider : IRepositoryProvider
     public string ConnectionString { get; set; }
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="StandardRepositoryProvider"/>
+    /// Initializes a new instance of the <see cref="ItineraRepositoryProvider"/>
     /// class.
     /// </summary>
     /// <exception cref="ArgumentNullException">configuration</exception>
