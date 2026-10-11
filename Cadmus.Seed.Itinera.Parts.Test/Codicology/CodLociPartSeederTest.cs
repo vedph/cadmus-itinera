@@ -42,5 +42,11 @@ public sealed class CodLociPartSeederTest
         TestHelper.AssertPartMetadata(p!);
 
         Assert.NotEmpty(p!.Loci);
+        // a range without its end is not a location for the editor
+        Assert.All(p.Loci, l =>
+        {
+            Assert.NotNull(l.Range?.Start);
+            Assert.NotNull(l.Range?.End);
+        });
     }
 }

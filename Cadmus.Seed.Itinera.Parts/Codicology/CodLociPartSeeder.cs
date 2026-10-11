@@ -26,7 +26,8 @@ public sealed class CodLociPartSeeder : PartSeederBase
                 .RuleFor(l => l.Range,
                     new CodLocationRange
                     {
-                        Start = new CodLocation { N = n * 2 }
+                        Start = new CodLocation { N = n * 2 },
+                        End = new CodLocation { N = n * 2 }
                     })
                 .RuleFor(l => l.Text, f => f.Lorem.Sentence())
                 .RuleFor(l => l.Images,
